@@ -84,10 +84,10 @@ rainbow_color = c_white; // (used for one of Sandbert w/ a Phone's cheat codes)
 // Animation Info
 
 // Misc. animation speeds
-idle_anim_speed     = 0.1;
+idle_anim_speed     = 0.2;
 crouch_anim_speed   = 0.1;
-walk_anim_speed     = 0.125;
-dash_anim_speed     = 0.2;
+walk_anim_speed     = 0.13;
+dash_anim_speed     = 0.3;
 pratfall_anim_speed = 0.25;
 
 // Jumps
@@ -123,8 +123,8 @@ roll_back_active_frames         = 4;
 roll_back_recovery_frames       = 2;
 
 // Crouch
-crouch_startup_frames   = 2;
-crouch_active_frames    = 8;
+crouch_startup_frames   = 3;
+crouch_active_frames    = 1;
 crouch_recovery_frames  = 2;
 
 /*
