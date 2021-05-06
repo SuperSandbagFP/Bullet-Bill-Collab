@@ -9,9 +9,9 @@ sprite_change_offset("dashstop", 11, 27);
 sprite_change_offset("dashturn", 11, 26);
 
 sprite_change_offset("jumpstart", 12, 24);
-sprite_change_offset("jump", 32, 62);
-sprite_change_offset("doublejump", 32, 62);
-sprite_change_offset("walljump", 32, 62);
+sprite_change_offset("jump", 11, 24);
+sprite_change_offset("doublejump", 12, 24);
+sprite_change_offset("walljump", 12, 24);
 sprite_change_offset("pratfall", 32, 62);
 sprite_change_offset("land", 12, 24);
 sprite_change_offset("landinglag", 12, 24);
