@@ -23,7 +23,7 @@ sprite_change_offset("airdodge", 32, 62);
 sprite_change_offset("waveland", 32, 62);
 sprite_change_offset("tech", 32, 62);
 
-sprite_change_offset("jab", 14, 27);
+sprite_change_offset("jab", 14, 27, true);
 sprite_change_offset("dattack", 64, 94);
 sprite_change_offset("ftilt", 32, 62);
 sprite_change_offset("dtilt", 18, 16, true);
