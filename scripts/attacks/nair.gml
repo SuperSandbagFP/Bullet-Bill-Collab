@@ -72,7 +72,7 @@ set_hitbox_value(AT_NAIR, 3, HG_KNOCKBACK_SCALING, .7);
 set_hitbox_value(AT_NAIR, 3, HG_BASE_HITPAUSE, 6);
 set_hitbox_value(AT_NAIR, 3, HG_HITPAUSE_SCALING, .5);
 set_hitbox_value(AT_NAIR, 3, HG_HIT_SFX, asset_get("sfx_zetter_fireball_fire"));
-set_hitbox_value(AT_NAIR, 3, HG_HITBOX_GROUP, 2);
+set_hitbox_value(AT_NAIR, 3, HG_HITBOX_GROUP, 1);
 
 set_hitbox_value(AT_NAIR, 4, HG_PARENT_HITBOX, 1);
 set_hitbox_value(AT_NAIR, 4, HG_HITBOX_TYPE, 1);
@@ -81,7 +81,7 @@ set_hitbox_value(AT_NAIR, 4, HG_WINDOW_CREATION_FRAME, 6);
 set_hitbox_value(AT_NAIR, 4, HG_LIFETIME, 2);
 set_hitbox_value(AT_NAIR, 4, HG_HITBOX_X, 33);
 set_hitbox_value(AT_NAIR, 4, HG_HITBOX_Y, -25);
-set_hitbox_value(AT_NAIR, 4, HG_HITBOX_GROUP, 2);
+set_hitbox_value(AT_NAIR, 4, HG_HITBOX_GROUP, 1);
 
 set_hitbox_value(AT_NAIR, 5, HG_PARENT_HITBOX, 1);
 set_hitbox_value(AT_NAIR, 5, HG_HITBOX_TYPE, 1);
