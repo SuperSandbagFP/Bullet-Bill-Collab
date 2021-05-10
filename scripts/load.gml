@@ -24,10 +24,10 @@ sprite_change_offset("waveland", 32, 62);
 sprite_change_offset("tech", 32, 62);
 
 sprite_change_offset("jab", 14, 27, true);
-sprite_change_offset("dattack", 64, 94);
-sprite_change_offset("ftilt", 32, 62);
+sprite_change_offset("dattack", 14, 26, true);
+sprite_change_offset("ftilt", 12, 38, true);
 sprite_change_offset("dtilt", 18, 16, true);
-sprite_change_offset("utilt", 64, 94);
+sprite_change_offset("utilt", 18, 47, true);
 sprite_change_offset("nair", 15, 28, true);
 sprite_change_offset("fair", 11, 25, true);
 sprite_change_offset("bair", 40, 27, true);
