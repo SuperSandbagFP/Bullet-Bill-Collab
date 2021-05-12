@@ -106,8 +106,8 @@ tech_recovery_frames    = 1;
 
 // Tech roll
 techroll_startup_frames     = 1;
-techroll_active_frames      = 4;
-techroll_recovery_frames    = 2;
+techroll_active_frames      = 3;
+techroll_recovery_frames    = 1;
 
 // Airdodge
 air_dodge_startup_frames    = 1;
@@ -116,11 +116,11 @@ air_dodge_recovery_frames   = 2;
 
 // Roll
 roll_forward_startup_frames     = 1;
-roll_forward_active_frames      = 4;
-roll_forward_recovery_frames    = 2;
+roll_forward_active_frames      = 3;
+roll_forward_recovery_frames    = 1;
 roll_back_startup_frames        = 1;
-roll_back_active_frames         = 4;
-roll_back_recovery_frames       = 2;
+roll_back_active_frames         = 3;
+roll_back_recovery_frames       = 1;
 
 // Crouch
 crouch_startup_frames   = 3;
