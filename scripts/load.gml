@@ -12,7 +12,7 @@ sprite_change_offset("jumpstart", 12, 24);
 sprite_change_offset("jump", 11, 24);
 sprite_change_offset("doublejump", 12, 24);
 sprite_change_offset("walljump", 12, 24);
-sprite_change_offset("pratfall", 32, 62);
+sprite_change_offset("pratfall", 11, 27);
 sprite_change_offset("land", 12, 24);
 sprite_change_offset("landinglag", 12, 24);
 
@@ -34,7 +34,8 @@ sprite_change_offset("bair", 40, 27, true);
 sprite_change_offset("uair", 18, 30, true);
 sprite_change_offset("dair", 11, 30, true);
 sprite_change_offset("strong", 26, 41, true);
-sprite_change_offset("nspecial", 64, 94);
+sprite_change_offset("nspecial", 11, 49, true);
+sprite_change_offset("nspecial_air", 26, 41, true);
 sprite_change_offset("fspecial", 64, 94);
 sprite_change_offset("uspecial", 64, 94);
 sprite_change_offset("dspecial", 64, 94);
