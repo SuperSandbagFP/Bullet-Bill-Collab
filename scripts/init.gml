@@ -165,3 +165,6 @@ bubble_x = 0;
 bubble_y = 8;
 
 small_sprites = true;
+
+blaster = noone;
+blaster_out = false;

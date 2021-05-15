@@ -4,11 +4,98 @@ if (attack == AT_NSPECIAL || attack == AT_FSPECIAL || attack == AT_DSPECIAL || a
 }
 
 if (attack == AT_NSPECIAL){
-    if (window == 3){
-        if (special_pressed){
-            window = 1;
-            window_timer = 0;
+    if (window == 3 && window_timer == 8 && blaster_out == false){
+        blaster = instance_create(x, y-48, "obj_article_platform");
+        blaster_out = true;
+    }
+}
+
+if (attack == AT_NSPECIAL_AIR){
+    if (window == 1 && window_timer == 15){
+        if (spr_dir == 1 && left_down == true){
+            spr_dir = -1;
         }
+        if (spr_dir == -1 && right_down == true){
+            spr_dir = 1;
+        }
+        
+        if (joy_pad_idle){
+            spr_dir *= -1;
+        }
+        
+        if ((joy_pad_idle || right_down || left_down) && !up_down && !down_down){
+            window = 2;
+            window_timer = 1;
+        }
+        if ((right_down || left_down) && up_down && !down_down){
+            window = 4;
+            window_timer = 1;
+        }
+        if (up_down && !right_down && !left_down && !down_down){
+            window = 6;
+            window_timer = 1;
+        }
+        if (down_down && !right_down && !left_down && !up_down){
+            window = 8;
+            window_timer = 1;
+        }
+        if ((right_down || left_down) && !up_down && down_down){
+            window = 10;
+            window_timer = 1;
+        }
+    }
+    
+    if ((window == 2 || window == 3) && hsp == 0 && window_timer > 0){
+            spr_dir *= -1;
+        }
+    if ((window == 4 || window == 5) && window_timer > 0){
+        if (vsp == 0 && hsp != 0){
+            window += 6;
+        }
+        if (vsp == 0 && hsp == 0){
+            window += 6;
+            spr_dir *= -1;
+        }
+        if (vsp != 0 && hsp == 0){
+            spr_dir *= -1;
+        }
+    }
+    if ((window == 6 || window == 7) && vsp == 0 && window_timer > 0){
+            window += 2;
+        }
+    if ((window == 8 || window == 9) && vsp == 0 && window_timer > 0){
+            window -= 2;
+        }
+    if ((window == 10 || window == 11) && window_timer > 0){
+        if (vsp == 0 && hsp != 0){
+            window -= 6;
+        }
+        if (vsp == 0 && hsp == 0){
+            window -= 6;
+            spr_dir *= -1;
+        }
+        if (vsp != 0 && hsp == 0){
+            spr_dir *= -1;
+        }
+    }
+    
+    if (state_timer == 35 && window != 12){
+        window += 1;
+        window_timer = 1;
+    }
+    
+    if (((window == 3 || window == 5 || window == 7 || window == 9 || window == 11) && window_timer == 8)
+    || (window == 12)){
+        if (blaster_out == false){
+            create_deathbox( x, y, 2, 2, player, true, 0, 2, 2); 
+        }
+        else {
+            x = blaster.x;
+            y = blaster.y;
+            blaster.shoulddie = true;
+            blaster.state_timer = 0;
+        }
+        
     }
 }
 
@@ -70,3 +157,4 @@ if (attack == AT_DSPECIAL){
     can_fast_fall = false;
     can_move = false
 }
+
