@@ -12,6 +12,7 @@ if (attack == AT_NSPECIAL){
 
 if (attack == AT_NSPECIAL_AIR){
     if (window == 1 && window_timer == 15){
+        move_cooldown[AT_NSPECIAL_AIR] = 999;
         if (spr_dir == 1 && left_down == true){
             spr_dir = -1;
         }
@@ -19,9 +20,6 @@ if (attack == AT_NSPECIAL_AIR){
             spr_dir = 1;
         }
         
-        if (joy_pad_idle){
-            spr_dir *= -1;
-        }
         
         if ((joy_pad_idle || right_down || left_down) && !up_down && !down_down){
             window = 2;
@@ -45,6 +43,26 @@ if (attack == AT_NSPECIAL_AIR){
         }
     }
     
+    if (state_timer >= 20 && window != 12 && !hitpause){
+        if (((window == 10 || window == 11 || window <= 5) && hsp == 0)
+        || (window >= 4 && (vsp == .5 || vsp == 0))){
+            spawn_hit_fx( x, y, 143);
+            if (blaster_out == false){
+                create_deathbox( x+50, y, 200, 200, player, true, 0, 2, 2); 
+            }
+            else {
+                sound_play(asset_get("sfx_death1"));
+                window = 12;
+                window_timer = 1;
+                x = blaster.x;
+                y = blaster.y;
+                blaster.shoulddie = true;
+                blaster.state_timer = 0;
+            }
+        }
+    }
+    
+    /*
     if ((window == 2 || window == 3) && hsp == 0 && window_timer > 0){
             spr_dir *= -1;
         }
@@ -78,25 +96,58 @@ if (attack == AT_NSPECIAL_AIR){
             spr_dir *= -1;
         }
     }
+    */
     
-    if (state_timer == 35 && window != 12){
+    if (state_timer > 15 && state_timer < 25){
+        switch (window){
+            case 2:
+                hsp = 7*spr_dir;    
+            break
+            case 4:
+                hsp = 4*spr_dir; 
+                vsp = -4;
+            break
+            case 6:
+                vsp = -6;    
+            break
+            case 8:
+                vsp = 6;    
+            break
+            case 10:
+                hsp = 4*spr_dir; 
+                vsp = 4;    
+            break
+        }
+        
+    }
+    if (state_timer >= 25){
+        switch (window){
+            case 2:
+                hsp = 11*spr_dir;    
+            break
+            case 4:
+                hsp = 7*spr_dir;  
+                vsp = -7;
+            break
+            case 6:
+                vsp = -10;    
+            break
+            case 8:
+                vsp = 10;    
+            break
+            case 10:
+                hsp = 7*spr_dir;  
+                vsp = 7;   
+            break
+        }
+    }
+    
+    if (state_timer == 45){
         window += 1;
         window_timer = 1;
     }
     
-    if (((window == 3 || window == 5 || window == 7 || window == 9 || window == 11) && window_timer == 8)
-    || (window == 12)){
-        if (blaster_out == false){
-            create_deathbox( x, y, 2, 2, player, true, 0, 2, 2); 
-        }
-        else {
-            x = blaster.x;
-            y = blaster.y;
-            blaster.shoulddie = true;
-            blaster.state_timer = 0;
-        }
-        
-    }
+    
 }
 
 if (attack == AT_FSPECIAL){
@@ -111,42 +162,18 @@ if (attack == AT_FSPECIAL){
 }
 
 if (attack == AT_USPECIAL){
-    if (window == 1 && window_timer == 1){
-        times_through = 0;
+    if (window == 1){
+        tannoki_turn = false;
     }
-    if (window == 2){
-        if (window_timer == get_window_value(attack, 2, AG_WINDOW_LENGTH)){
-            if (times_through < 10){
-                times_through++;
-                window_timer = 0;
-            }
-        }
-        if (!joy_pad_idle){
-            hsp += lengthdir_x(1, joy_dir);
-            vsp += lengthdir_y(1, joy_dir);
-        } else {
-            hsp *= .6;
-            vsp *= .6;
-        }
-        var fly_dir = point_direction(0,0,hsp,vsp);
-        var fly_dist = point_distance(0,0,hsp,vsp);
-        var max_speed = 12;
-        if (fly_dist > max_speed){
-            hsp = lengthdir_x(max_speed, fly_dir);
-            vsp = lengthdir_y(max_speed, fly_dir);
-        }
-        if (special_pressed && times_through > 0){
-            window = 4;
-            window_timer = 0;
-        }
-        if (shield_pressed){
-            window = 3;
-            window_timer = 0;
-        }
+    if (!free){
+        set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED_TYPE, 0);
+        set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED, 0);
+        set_window_value(AT_USPECIAL, 3, AG_WINDOW_TYPE, 1);
     }
-    if (window > 3 && window < 6 && window_timer == get_window_value(attack, window, AG_WINDOW_LENGTH)){
-        window++;
-        window_timer = 0;
+    else {
+        set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED_TYPE, 2);
+        set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED, -8);
+        set_window_value(AT_USPECIAL, 3, AG_WINDOW_TYPE, 7);
     }
 }
 

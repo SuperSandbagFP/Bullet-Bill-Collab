@@ -168,3 +168,7 @@ small_sprites = true;
 
 blaster = noone;
 blaster_out = false;
+
+kamikaze = 0;
+
+tannoki_turn = false;

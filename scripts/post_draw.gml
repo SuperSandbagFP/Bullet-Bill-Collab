@@ -1,1 +1,1 @@
-print (window);
+print (hsp);
