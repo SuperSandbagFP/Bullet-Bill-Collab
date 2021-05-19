@@ -164,11 +164,18 @@ air_dodge_sound     = asset_get("sfx_quick_dodge");
 bubble_x = 0;
 bubble_y = 8;
 
+AT_STRONG = AT_FSTRONG_2;
+
 small_sprites = true;
 
 blaster = noone;
 blaster_out = false;
+blaster_close = false;
 
 kamikaze = 0;
+strong_direction = 0;
+strong_speed = 5;
+blaster_strong_draw = true;
+blaster_dir = 1;
 
-tannoki_turn = false;
+tanooki_turn = false;

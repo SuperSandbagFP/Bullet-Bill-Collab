@@ -1,1 +1,2 @@
-print (hsp);
+
+print (strong_direction);

@@ -16,7 +16,8 @@ if (my_hitboxID.attack == AT_NSPECIAL_AIR){
         
 }
 
-if (my_hitboxID.attack == AT_USPECIAL && tannoki_turn == false){
+if (my_hitboxID.attack == AT_USPECIAL && tanooki_turn == false){
 	hit_player_obj.spr_dir *= -1;
-	tannoki_turn = true;
+	hit_player_obj.hsp = hit_player_obj.hsp*-1;
+	tanooki_turn = true;
 }

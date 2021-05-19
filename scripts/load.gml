@@ -12,7 +12,7 @@ sprite_change_offset("jumpstart", 12, 24);
 sprite_change_offset("jump", 11, 24);
 sprite_change_offset("doublejump", 12, 24);
 sprite_change_offset("walljump", 12, 24);
-sprite_change_offset("pratfall", 11, 27);
+sprite_change_offset("pratfall", 6, 22);
 sprite_change_offset("land", 12, 24);
 sprite_change_offset("landinglag", 12, 24);
 
@@ -37,7 +37,8 @@ sprite_change_offset("strong", 26, 41, true);
 sprite_change_offset("nspecial", 11, 49, true);
 sprite_change_offset("nspecial_air", 26, 41, true);
 sprite_change_offset("fspecial", 64, 94);
-sprite_change_offset("uspecial", 28, 18, true);
+sprite_change_offset("uspecial", 28, 30, true);
+sprite_change_offset("uspecial_air", 28, 20, true);
 sprite_change_offset("dspecial", 11, 27, true);
 sprite_change_offset("taunt", 32, 62);
 
@@ -45,3 +46,4 @@ sprite_change_offset("plat", 64, 94);
 
 sprite_change_offset("blaster_stand", 8, 5);
 sprite_change_offset("blaster_mask", 8, 29);
+sprite_change_offset("blaster_top_default", 18, 24);
