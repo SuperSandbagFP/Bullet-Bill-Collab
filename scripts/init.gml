@@ -179,6 +179,5 @@ strong_direction = 0;
 strong_speed = 5;
 blaster_strong_draw = true;
 blaster_dir = 1;
-blaster_remote = 0;
 
 tanooki_turn = false;

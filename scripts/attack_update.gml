@@ -292,5 +292,33 @@ if (attack == AT_STRONG){
     
 }
 
+if (attack == AT_FSTRONG){
+    if (window == 2 && window_timer == 3 && !hitpause){
+        spawn_hit_fx( blaster.x+50*spr_dir, blaster.y-10, 139);
+        create_hitbox(AT_FSTRONG, 2, blaster.x+50*spr_dir, blaster.y-10);
+        strong_direction = 0;
+        sound_play(asset_get("sfx_ell_strong_attack_explosion"));
+    }
+}
+
+if (attack == AT_USTRONG){
+    if (window == 2 && window_timer == 3 && !hitpause){
+        spawn_hit_fx( blaster.x, blaster.y-40, 139);
+        create_hitbox(AT_USTRONG, 2, blaster.x, blaster.y-40);
+        strong_direction = 1;
+        sound_play(asset_get("sfx_ell_strong_attack_explosion"));
+    }
+}
+
+if (attack == AT_DSTRONG){
+    if (window == 2 && window_timer == 3 && !hitpause){
+        spawn_hit_fx( blaster.x+40*spr_dir, blaster.y+30, 139);
+        create_hitbox(AT_DSTRONG, 2, blaster.x+40*spr_dir, blaster.y+30);
+        strong_direction = 2;
+        blaster_dir = spr_dir;
+        sound_play(asset_get("sfx_ell_strong_attack_explosion"));
+    }
+}
+
 
 
