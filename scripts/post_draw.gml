@@ -1,2 +1,2 @@
 
-print (strong_direction);
+print (blaster_dir);

@@ -1,2 +1,2 @@
 //hitbox_init
-AT_STRONG = AT_FSTRONG_2;
+AT_STRONG = AT_EXTRA_1;

@@ -9,8 +9,6 @@ set_attack_value(AT_USPECIAL, AG_HURTBOX_AIR_SPRITE, sprite_get("uspecial_air_hu
 
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_LENGTH, 11);
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_ANIM_FRAMES, 7);
-set_window_value(AT_USPECIAL, 1, AG_WINDOW_VSPEED_TYPE, 1);
-set_window_value(AT_USPECIAL, 1, AG_WINDOW_VSPEED, 0);
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_HAS_SFX, 1);
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_SFX, asset_get("sfx_spin"));
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_SFX_FRAME, 7);
@@ -19,7 +17,7 @@ set_window_value(AT_USPECIAL, 2, AG_WINDOW_LENGTH, 6);
 set_window_value(AT_USPECIAL, 2, AG_WINDOW_ANIM_FRAMES, 4);
 set_window_value(AT_USPECIAL, 2, AG_WINDOW_ANIM_FRAME_START, 7);
 set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED_TYPE, 2);
-set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED, -5);
+set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED, -6);
 
 set_window_value(AT_USPECIAL, 3, AG_WINDOW_TYPE, 7);
 set_window_value(AT_USPECIAL, 3, AG_WINDOW_LENGTH, 10);

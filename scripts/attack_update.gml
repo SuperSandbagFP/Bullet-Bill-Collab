@@ -14,12 +14,13 @@ if (attack == AT_NSPECIAL){
 }
 
 if (attack == AT_NSPECIAL_AIR){
-    if (window == 1 && window_timer < 15 && blaster_out == true && shield_pressed){
+    if (window == 1 && window_timer < 15 && blaster_out == true && shield_pressed && !free){
         attack = AT_NSPECIAL;
         window_timer = 1;
         hurtboxID.sprite_index = sprite_get("nspecial_hurt");
     }
     if (window == 1 && window_timer == 15){
+        has_hit = false;
         move_cooldown[AT_NSPECIAL_AIR] = 999;
         if (spr_dir == 1 && left_down == true){
             spr_dir = -1;
@@ -27,26 +28,31 @@ if (attack == AT_NSPECIAL_AIR){
         if (spr_dir == -1 && right_down == true){
             spr_dir = 1;
         }
-        
+        kamikaze_dir = spr_dir;
         
         if ((joy_pad_idle || right_down || left_down) && !up_down && !down_down){
             window = 2;
+            kamikaze_strong = 2;
             window_timer = 1;
         }
         if ((right_down || left_down) && up_down && !down_down){
             window = 4;
+            kamikaze_strong = 4;
             window_timer = 1;
         }
         if (up_down && !right_down && !left_down && !down_down){
             window = 6;
+            kamikaze_strong = 6;
             window_timer = 1;
         }
         if (down_down && !right_down && !left_down && !up_down){
             window = 8;
+            kamikaze_strong = 8;
             window_timer = 1;
         }
         if ((right_down || left_down) && !up_down && down_down){
             window = 10;
+            kamikaze_strong = 10;
             window_timer = 1;
         }
     }
@@ -59,6 +65,8 @@ if (attack == AT_NSPECIAL_AIR){
                 create_deathbox( x+50, y, 200, 200, player, true, 0, 2, 2); 
             }
             else {
+                destroy_hitboxes();
+                kamikaze = 1;
                 sound_play(asset_get("sfx_death1"));
                 window = 12;
                 window_timer = 1;
@@ -152,7 +160,7 @@ if (attack == AT_USPECIAL){
     }
     else {
         set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED_TYPE, 2);
-        set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED, -12);
+        set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED, -13);
         set_window_value(AT_USPECIAL, 3, AG_WINDOW_TYPE, 7);
         
         set_window_value(AT_USPECIAL, 3, AG_WINDOW_LENGTH, 18);
@@ -173,7 +181,7 @@ if (attack == AT_DSPECIAL){
 
 if (attack == AT_STRONG){
     
-        
+        can_fast_fall = false;
         set_window_value(AT_STRONG, 2, AG_WINDOW_HSPEED, 9+strong_charge/3);
         set_window_value(AT_STRONG, 4, AG_WINDOW_HSPEED, 6+strong_charge/3);
         set_window_value(AT_STRONG, 4, AG_WINDOW_VSPEED, -6-strong_charge/3);
@@ -184,23 +192,29 @@ if (attack == AT_STRONG){
         
     
     if (window == 1){
+        if (right_strong_down || left_strong_down || up_strong_down || down_strong_down){
+            strong_down = true;
+        }
+        
         blaster_dir = spr_dir;
         blaster_strong_draw = false;
         set_attack_value(AT_STRONG, AG_SPRITE, sprite_get("blaster_top_default"));
-        if (right_strong_pressed || left_strong_pressed){
-            set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAME_START, 0);
-            set_window_value(AT_STRONG, 1, AG_WINDOW_GOTO, 2);
-            strong_direction = 0;
-        }
-        if (up_strong_pressed){
-            set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAME_START, 1);
-            set_window_value(AT_STRONG, 1, AG_WINDOW_GOTO, 6);
-            strong_direction = 1;
-        }
-        if (down_strong_pressed){
-            set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAME_START, 2);
-            set_window_value(AT_STRONG, 1, AG_WINDOW_GOTO, 10);
-            strong_direction = 2;
+        if (window_timer == 1){
+            if (right_strong_pressed || left_strong_pressed){
+                set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAME_START, 0);
+                set_window_value(AT_STRONG, 1, AG_WINDOW_GOTO, 2);
+                strong_direction = 0;
+            }
+            if (up_strong_pressed){
+                set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAME_START, 1);
+                set_window_value(AT_STRONG, 1, AG_WINDOW_GOTO, 6);
+                strong_direction = 1;
+            }
+            if (down_strong_pressed){
+                set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAME_START, 2);
+                set_window_value(AT_STRONG, 1, AG_WINDOW_GOTO, 10);
+                strong_direction = 2;
+            }
         }
         
         x = blaster.x;
@@ -220,39 +234,59 @@ if (attack == AT_STRONG){
     }
     
     
+    if (window_timer > 2){
+    
     if ((window == 2 || window == 3) && hsp == 0 && window_timer > 0 && !hitpause){
+            destroy_hitboxes();
             spr_dir *= -1;
             window_timer = 1;
         }
     if ((window == 4 || window == 5) && window_timer > 0 && !hitpause){
         if (vsp == 0 && hsp != 0){
+            destroy_hitboxes();
+            window_timer = 1;
             window += 6;
         }
         if (vsp == 0 && hsp == 0 && !hitpause){
+            destroy_hitboxes();
+            window_timer = 1;
             window += 6;
             spr_dir *= -1;
         }
         if (vsp != 0 && hsp == 0 && !hitpause){
+            destroy_hitboxes();
+            window_timer = 1;
             spr_dir *= -1;
         }
     }
     if ((window == 6 || window == 7) && vsp == 0 && window_timer > 0 && !hitpause){
+        destroy_hitboxes();
+        window_timer = 1;
             window += 2;
         }
     if ((window == 8 || window == 9) && vsp == 0 && window_timer > 0 && !hitpause){
+        destroy_hitboxes();
+        window_timer = 1;
             window -= 2;
         }
     if ((window == 10 || window == 11) && window_timer > 1 && !hitpause){
         if (vsp == 0 && hsp != 0){
+            destroy_hitboxes();
+            window_timer = 1;
             window -= 6;
         }
         if (vsp == 0 && hsp == 0 && !hitpause){
+            destroy_hitboxes();
+            window_timer = 1;
             window -= 6;
             spr_dir *= -1;
         }
         if (vsp != 0 && hsp == 0 && !hitpause){
+            destroy_hitboxes();
+            window_timer = 1;
             spr_dir *= -1;
         }
+    }
     }
     
     

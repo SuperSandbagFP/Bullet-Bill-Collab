@@ -119,7 +119,6 @@ set_hitbox_value(AT_NSPECIAL_AIR, 1, HG_BASE_HITPAUSE, 18);
 set_hitbox_value(AT_NSPECIAL_AIR, 1, HG_HITPAUSE_SCALING, 1.0);
 set_hitbox_value(AT_NSPECIAL_AIR, 1, HG_VISUAL_EFFECT, 304);
 set_hitbox_value(AT_NSPECIAL_AIR, 1, HG_HIT_SFX, asset_get("sfx_burnconsume"));
-set_hitbox_value(AT_NSPECIAL_AIR, 1, HG_HIT_LOCKOUT, 3);
 
 set_hitbox_value(AT_NSPECIAL_AIR, 2, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_NSPECIAL_AIR, 2, HG_WINDOW, 3);
@@ -137,7 +136,6 @@ set_hitbox_value(AT_NSPECIAL_AIR, 2, HG_BASE_HITPAUSE, 18);
 set_hitbox_value(AT_NSPECIAL_AIR, 2, HG_HITPAUSE_SCALING, 1.0);
 set_hitbox_value(AT_NSPECIAL_AIR, 2, HG_VISUAL_EFFECT, 304);
 set_hitbox_value(AT_NSPECIAL_AIR, 2, HG_HIT_SFX, asset_get("sfx_burnconsume"));
-set_hitbox_value(AT_NSPECIAL_AIR, 2, HG_HIT_LOCKOUT, 3);
 
 set_hitbox_value(AT_NSPECIAL_AIR, 3, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_NSPECIAL_AIR, 3, HG_WINDOW, 4);

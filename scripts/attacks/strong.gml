@@ -24,7 +24,7 @@ set_window_value(AT_STRONG, 2, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 3, AG_WINDOW_LENGTH, 4);
 set_window_value(AT_STRONG, 3, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 3, AG_WINDOW_ANIM_FRAME_START, 15);
-set_window_value(AT_STRONG, 3, AG_WINDOW_HSPEED, 6);
+set_window_value(AT_STRONG, 3, AG_WINDOW_HSPEED, 9);
 set_window_value(AT_STRONG, 3, AG_WINDOW_HSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 3, AG_WINDOW_VSPEED, 0);
 set_window_value(AT_STRONG, 3, AG_WINDOW_VSPEED_TYPE, 1);
@@ -41,9 +41,9 @@ set_window_value(AT_STRONG, 4, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 5, AG_WINDOW_LENGTH, 4);
 set_window_value(AT_STRONG, 5, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 5, AG_WINDOW_ANIM_FRAME_START, 17);
-set_window_value(AT_STRONG, 5, AG_WINDOW_HSPEED, 3);
+set_window_value(AT_STRONG, 5, AG_WINDOW_HSPEED, 6);
 set_window_value(AT_STRONG, 5, AG_WINDOW_HSPEED_TYPE, 1);
-set_window_value(AT_STRONG, 5, AG_WINDOW_VSPEED, -3);
+set_window_value(AT_STRONG, 5, AG_WINDOW_VSPEED, -6);
 set_window_value(AT_STRONG, 5, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 5, AG_WINDOW_GOTO, 13);
 
@@ -60,7 +60,7 @@ set_window_value(AT_STRONG, 7, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 7, AG_WINDOW_ANIM_FRAME_START, 19);
 set_window_value(AT_STRONG, 7, AG_WINDOW_HSPEED, 0);
 set_window_value(AT_STRONG, 7, AG_WINDOW_HSPEED_TYPE, 1);
-set_window_value(AT_STRONG, 7, AG_WINDOW_VSPEED, -6);
+set_window_value(AT_STRONG, 7, AG_WINDOW_VSPEED, -9);
 set_window_value(AT_STRONG, 7, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 7, AG_WINDOW_GOTO, 13);
 
@@ -77,7 +77,7 @@ set_window_value(AT_STRONG, 9, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 9, AG_WINDOW_ANIM_FRAME_START, 21);
 set_window_value(AT_STRONG, 9, AG_WINDOW_HSPEED, 0);
 set_window_value(AT_STRONG, 9, AG_WINDOW_HSPEED_TYPE, 1);
-set_window_value(AT_STRONG, 9, AG_WINDOW_VSPEED, 6);
+set_window_value(AT_STRONG, 9, AG_WINDOW_VSPEED, 9);
 set_window_value(AT_STRONG, 9, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 9, AG_WINDOW_GOTO, 13);
 
@@ -92,9 +92,9 @@ set_window_value(AT_STRONG, 10, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 11, AG_WINDOW_LENGTH, 4);
 set_window_value(AT_STRONG, 11, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 11, AG_WINDOW_ANIM_FRAME_START, 23);
-set_window_value(AT_STRONG, 11, AG_WINDOW_HSPEED, 3);
+set_window_value(AT_STRONG, 11, AG_WINDOW_HSPEED, 6);
 set_window_value(AT_STRONG, 11, AG_WINDOW_HSPEED_TYPE, 1);
-set_window_value(AT_STRONG, 11, AG_WINDOW_VSPEED, 3);
+set_window_value(AT_STRONG, 11, AG_WINDOW_VSPEED, 6);
 set_window_value(AT_STRONG, 11, AG_WINDOW_VSPEED_TYPE, 1);
 
 

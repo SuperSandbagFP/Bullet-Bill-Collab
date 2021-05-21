@@ -7,11 +7,14 @@ if (my_hitboxID.attack == AT_NSPECIAL_AIR){
             create_deathbox( x, y, 2, 2, player, true, 0, 2, 2); 
         }
         else {
+        	destroy_hitboxes();
         	sound_play(asset_get("sfx_death1"));
+        	visible = false;
+        	window = 12;
+        	window_timer = 1;
+        	kamikaze = 1;
             x = blaster.x;
             y = blaster.y;
-            hsp = 0;
-            vsp = 0;
         }
         
 }
