@@ -172,11 +172,89 @@ if (attack == AT_USPECIAL){
 }
 
 if (attack == AT_DSPECIAL){
-    if (window == 2 && !was_parried){
-        can_jump = true;
+    if (window == 1){
+        scope_fast = false;
+        scope_aim = 0;
     }
-    can_fast_fall = false;
-    can_move = false
+    if (window == 2){
+        if (!special_down && state_timer > 24){
+            window = 3;  
+            window_timer = 1;
+        }
+        else {
+            if (up_down && scope_aim >= -30 && scope_aim <= 30){
+                scope_aim += spr_dir;
+            }
+            if (down_down && scope_aim >= -30 && scope_aim <= 30){
+                scope_aim -= spr_dir;
+            }
+        }
+    }
+    if (window == 3){
+        if (scope_aim_proj == 0){
+            set_hitbox_value(AT_DSPECIAL, 1, HG_LIFETIME, 120);
+            set_hitbox_value(AT_DSPECIAL, 2, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 3, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 4, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 5, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 6, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 7, HG_LIFETIME, 0);
+        }
+        if (scope_aim_proj > 0 && scope_aim_proj <= 10){
+            set_hitbox_value(AT_DSPECIAL, 1, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 2, HG_LIFETIME, 120);
+            set_hitbox_value(AT_DSPECIAL, 3, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 4, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 5, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 6, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 7, HG_LIFETIME, 0);
+        }
+        if (scope_aim_proj < 0 && scope_aim_proj >= -10){
+            set_hitbox_value(AT_DSPECIAL, 1, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 2, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 3, HG_LIFETIME, 120);
+            set_hitbox_value(AT_DSPECIAL, 4, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 5, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 6, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 7, HG_LIFETIME, 0);
+        }
+        if (scope_aim_proj > 10 && scope_aim_proj <= 20){
+            set_hitbox_value(AT_DSPECIAL, 1, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 2, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 3, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 4, HG_LIFETIME, 120);
+            set_hitbox_value(AT_DSPECIAL, 5, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 6, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 7, HG_LIFETIME, 0);
+        }
+        if (scope_aim_proj < -10 && scope_aim_proj >= -20){
+            set_hitbox_value(AT_DSPECIAL, 1, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 2, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 3, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 4, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 5, HG_LIFETIME, 120);
+            set_hitbox_value(AT_DSPECIAL, 6, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 7, HG_LIFETIME, 0);
+        }
+        if (scope_aim_proj > 20 && scope_aim_proj <= 30){
+            set_hitbox_value(AT_DSPECIAL, 1, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 2, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 3, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 4, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 5, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 6, HG_LIFETIME, 120);
+            set_hitbox_value(AT_DSPECIAL, 7, HG_LIFETIME, 0);
+        }
+        if (scope_aim_proj < -20 && scope_aim_proj >= -30){
+            set_hitbox_value(AT_DSPECIAL, 1, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 2, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 3, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 4, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 5, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 6, HG_LIFETIME, 0);
+            set_hitbox_value(AT_DSPECIAL, 7, HG_LIFETIME, 120);
+        }
+    }
 }
 
 if (attack == AT_STRONG){

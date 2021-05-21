@@ -181,3 +181,7 @@ blaster_strong_draw = true;
 blaster_dir = 1;
 
 tanooki_turn = false;
+
+scope_aim = 0;
+scope_aim_proj = 0;
+scope_fast = false;
