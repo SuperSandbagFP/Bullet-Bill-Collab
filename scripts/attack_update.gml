@@ -133,14 +133,47 @@ if (attack == AT_NSPECIAL_AIR){
 }
 
 if (attack == AT_FSPECIAL){
-    if (window == 2){
-        if (special_pressed){
-            window = 3;
-            window_timer = 0;
-            destroy_hitboxes();
-        }
-    }
     can_fast_fall = false;
+    if (window == 4){
+        if (!down_down && !up_down){
+            if (attack_pressed || special_pressed){
+                window = 5;
+                window_timer = 1;
+            }
+            
+            if (vsp > 0){
+                vsp -= .05;
+            }
+            if (vsp < 0){
+                vsp += .05;
+            }
+            if (vsp == 0){
+                vsp = 0;
+            }
+            
+        }
+        if (down_down){
+            if (attack_pressed || special_pressed){
+                window = 7;
+                window_timer = 1;
+            }
+            vsp+=.2;
+        }
+        if (up_down){
+            if (attack_pressed || special_pressed){
+                window = 6;
+                window_timer = 1;
+            }
+            vsp-=.2;
+        }
+        
+        if (state_timer > 60){
+            window = 5;
+            window_timer = 1;
+        }
+        
+        
+    }
 }
 
 if (attack == AT_USPECIAL){

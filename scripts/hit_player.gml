@@ -1,3 +1,5 @@
+
+
 if (my_hitboxID.attack == AT_NSPECIAL_AIR){
 	spawn_hit_fx( x, y, 143);
 	window = 12;
@@ -24,3 +26,27 @@ if (my_hitboxID.attack == AT_USPECIAL && tanooki_turn == false){
 	hit_player_obj.hsp = hit_player_obj.hsp*-1;
 	tanooki_turn = true;
 }
+
+//Grabbing opponent
+if (my_hitboxID.attack == AT_FSPECIAL && my_hitboxID.hbox_num == 1 && torpedo_grab == false){
+    if ((state == PS_ATTACK_GROUND || state == PS_ATTACK_AIR)
+	  && (hit_player_obj.state == PS_HITSTUN || hit_player_obj.state == PS_HITSTUN_LAND)
+    	  && was_parried == false
+	  && hit_player_obj.clone == false){
+	        
+	        //Timer is the opponent percentage + 60
+//	        grab_timer = get_player_damage(hit_player_obj.player) + 60;
+	        
+	        window = 3;
+	        window_timer = 1;
+	        
+	        grab_dir = 0;
+	        torpedo_grab = true;
+            window = 3;
+            window_timer = 1;
+	        hit_player_obj.x = x+80*spr_dir;
+	        hit_player_obj.y = y;
+	        
+	  }
+}
+
