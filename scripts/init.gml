@@ -185,3 +185,6 @@ tanooki_turn = false;
 scope_aim = 0;
 scope_aim_proj = 0;
 scope_fast = false;
+
+torpedo_grab = false;
+grab_dir = 0;
