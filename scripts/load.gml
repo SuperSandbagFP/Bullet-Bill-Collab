@@ -1,5 +1,8 @@
 sprite_change_offset("idle", 11, 27);
 sprite_change_offset("hurt", 11, 29);
+sprite_change_offset("downhurt", 11, 29);
+sprite_change_offset("uphurt", 11, 29);
+sprite_change_offset("spinhurt", 11, 29);
 sprite_change_offset("crouch", 12, 24);
 sprite_change_offset("walk", 11, 30);
 sprite_change_offset("walkturn", 11, 26);
@@ -18,10 +21,10 @@ sprite_change_offset("landinglag", 12, 24);
 
 sprite_change_offset("parry", 32, 62);
 sprite_change_offset("roll_forward", 11, 25);
-sprite_change_offset("roll_backward", 14, 26);
+sprite_change_offset("roll_backward", 11, 25);
 sprite_change_offset("airdodge", 32, 62);
 sprite_change_offset("waveland", 11, 24);
-sprite_change_offset("tech", 32, 62);
+sprite_change_offset("tech", 14, 26);
 
 sprite_change_offset("jab", 14, 27, true);
 sprite_change_offset("dattack", 14, 26, true);
@@ -39,13 +42,13 @@ sprite_change_offset("ustrong", 11, 41, true);
 sprite_change_offset("strong", 26, 41, true);
 sprite_change_offset("nspecial", 11, 49, true);
 sprite_change_offset("nspecial_air", 26, 41, true);
-sprite_change_offset("fspecial", 64, 94);
+sprite_change_offset("fspecial", 27, 48, true);
 sprite_change_offset("uspecial", 28, 30, true);
 sprite_change_offset("uspecial_air", 28, 20, true);
 sprite_change_offset("dspecial", 11, 27, true);
 sprite_change_offset("taunt", 32, 62);
 
-sprite_change_offset("plat", 64, 94);
+sprite_change_offset("plat", 18, 4);
 
 sprite_change_offset("blaster_stand", 8, 5);
 sprite_change_offset("blaster_mask", 8, 29);
