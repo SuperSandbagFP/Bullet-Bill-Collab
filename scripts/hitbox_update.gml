@@ -1,20 +1,27 @@
 
 if (attack == AT_DSPECIAL){
-	proj_angle = player_id.scope_aim;
-}
+	
+	if (hitbox_timer == 1){
+		proj_angle = player_id.scope_aim;	
+	}
+	
+	if (hbox_num == 10){
+		proj_angle = 90;	
+	}
+	
+	if (hbox_num == 9){
+		proj_angle = -45*spr_dir;	
+	}
 
-if ((x > player_id.blaster.x-60 && x < player_id.blaster.x+60) && player_id.scope_fast == false && hitbox_timer > 2 
-&& (y > player_id.blaster.y-30 && y < player_id.blaster.y+110) && player_id.blaster_out == true){
-    sprite_index = sprite_get("sniper_bullet_strong");
-    player_id.scope_fast = true;
-    hsp += 3*spr_dir;
-    damage = 10;
-    kb_value = 7;
-    hitpause = 10;
-    if (vsp > 0){
-    	vsp += 3;
+	if ((x > player_id.blaster.x-60 && x < player_id.blaster.x+60)  
+	&& (y > player_id.blaster.y-30 && y < player_id.blaster.y+110)){
+    
+    
+    if (player_id.blaster_mini < 5 && hbox_num < 8){
+    	player_id.blaster_mini++;
+    	destroyed = true;
     }
-    if (vsp < 0){
-    	vsp -= 3;
-    }
+    	
+	}
+
 }

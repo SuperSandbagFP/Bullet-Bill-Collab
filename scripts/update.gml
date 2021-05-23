@@ -14,7 +14,7 @@ if (kamikaze > 0 && !hitpause){
     spr_dir = kamikaze_dir;
     if (kamikaze > 2){
 
-        visible = true;
+        
         blaster_dir = spr_dir;
         switch (kamikaze_strong){
             case 2:
@@ -26,6 +26,7 @@ if (kamikaze > 0 && !hitpause){
                 x = blaster.x +40*spr_dir;
                 y = blaster.y -50;
                 strong_direction = 2; 
+                blaster_dir = -spr_dir;
             break
             case 6:
                 x = blaster.x;
@@ -46,8 +47,40 @@ if (kamikaze > 0 && !hitpause){
         set_attack( AT_STRONG );
         window = kamikaze_strong;
         window_timer = 0;
-        kamikaze = 0;
+        if (kamikaze_hit == true){
+        	kamikaze = 0;
+        	visible = true;	
+        }
+        
     }
+}
+
+if (blaster_anim != 0 && blaster_anim_frame >= 0 && kamikaze > 0){
+	blaster_anim_frame += .25;
+	destroy_hitboxes();
+}
+
+if (blaster_anim != 0 && blaster_anim_frame >= 0 && kamikaze == 0 && window_timer != 8){
+	blaster_anim_frame += .25;
+}
+
+if (blaster_anim_frame == 3.5 && kamikaze > 0){
+	if (blaster_anim == 1){
+		spawn_hit_fx( blaster.x+30*spr_dir, blaster.y-45, blaster_smoke_1 );
+	}
+	if (blaster_anim == 2){
+		spawn_hit_fx( blaster.x-35*spr_dir, blaster.y-105, blaster_smoke_2 );
+	}
+}
+
+if (blaster_anim_frame > 4){
+	if (kamikaze_hit == false){
+		kamikaze = 0;
+		visible = true;	
+	}
+	
+	blaster_anim_frame = -1;
+	blaster_anim = 0;
 }
 
 if (scope_aim == 31){
@@ -87,6 +120,75 @@ if ((state == PS_ATTACK_GROUND || state == PS_ATTACK_AIR) && torpedo_grab == tru
 	    torpedo_grab = false;
 	}
 
+}
+
+if ((state == PS_ATTACK_GROUND || state == PS_ATTACK_AIR) && torpedo_blaster == true && attack == AT_FSPECIAL){
+	
+	if (window == 2){
+		window = 3;
+	}
+	
+	blaster.x = x+80*spr_dir;
+	blaster.y = y-50;
+	
+	if (window == 3){
+	    if (window_timer > 0 && window_timer < 3){
+	        blaster.x = x+110*spr_dir;  
+	    }
+	    if (window_timer >= 3 && window_timer < 6){
+	        blaster.x = x+130*spr_dir;  
+	    }
+	    if (window_timer >= 6){
+	        blaster.x = x+110*spr_dir;  
+	    }
+	}
+	
+	if (window == 4){
+	    blaster.x = x+125*spr_dir;
+	}
+	
+	if (window >= 5){
+		blaster.x = x+125*spr_dir;
+	    torpedo_blaster = false;
+	}
+	
+
+}
+
+if (blaster_mini_shoot == 1){
+	if (blaster_mini == round(blaster_mini) && blaster_mini > 0){
+		create_hitbox(AT_DSPECIAL, 8, blaster.x, blaster.y);
+	}
+	if (blaster_mini > 0){
+		blaster_mini -= .1;	
+	}
+	else {
+		blaster_mini_shoot = 0;
+	}
+}
+
+if (blaster_mini_shoot == 2){
+	if (blaster_mini == 1 || blaster_mini == 2 || blaster_mini == 3 || blaster_mini == 4 || blaster_mini == 5){
+		create_hitbox(AT_DSPECIAL, 9, blaster.x, blaster.y);
+	}
+	if (blaster_mini > 0){
+		blaster_mini -= .1;	
+	}
+	else {
+		blaster_mini_shoot = 0;
+	}
+}
+
+if (blaster_mini_shoot == 3){
+	if (blaster_mini == 1 || blaster_mini == 2 || blaster_mini == 3 || blaster_mini == 4 || blaster_mini == 5){
+		create_hitbox(AT_DSPECIAL, 10, blaster.x, blaster.y);
+	}
+	if (blaster_mini > 0){
+		blaster_mini -= .1;	
+	}
+	else {
+		blaster_mini_shoot = 0;
+	}
 }
 
 if ((x > blaster.x-60 && x < blaster.x+60) && (y > blaster.y-10 && y < blaster.y+110) && blaster_out == true){

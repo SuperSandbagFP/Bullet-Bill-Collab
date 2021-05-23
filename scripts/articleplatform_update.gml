@@ -13,76 +13,149 @@
 
 state_timer++;
 
-/*
+
 with (asset_get("pHitBox")){
-	
-if (damage > 0 && kb_value > 0){
-	
-if (other.player_id.runeL == false){
 
-if (place_meeting(x,y,other.id) && other.player != player){
-	if !(get_player_team(other.player_id.player ) == get_player_team( player_id.player )){
-	if (other.clone_counter = true){
-		other.clone_counter_attack = true;
-	}
-	else{
-		other.clone_cooldown = true;
-	}
-		spawn_hit_fx( x+30, y, 13);
-		other.clone_death_sound = true;
-		other.shoulddie = true;
-    }
-}
-
-}
-    
 if (attack == AT_FSPECIAL && (place_meeting(x,y,other.id) && other.player_id = player_id)){
 	
-	if (other.clone_counter = false){
-		spawn_hit_fx( other.x, other.y-20, 13);
-		spawn_hit_fx( player_id.x, player_id.y-20, 13);
-		if ((player_id.attack == AT_FSTRONG || player_id.attack == AT_USTRONG || player_id.attack == AT_DSTRONG)
-		&& (player_id.state == PS_ATTACK_GROUND || player_id.state == PS_ATTACK_AIR)){
-			player_id.strong_max = true;
-		}
-		player_id.x = other.x;
-		sound_play(sound_get("counter_success"));
-		if (other.free = true){
-			player_id.y = other.y+5;
-		}
-		if (other.free = false){
-			player_id.y = other.y;
-		}
-		
-		other.clone_proj = true;
+	
+	if (hbox_num == 5){
+		player_id.torpedo_blaster = true;
+		other.spr_dir = player_id.spr_dir;
 	}
-	if (other.clone_counter = true){
-		spawn_hit_fx( other.x, other.y-20, 143);
-		other.clone_counter_attack = true;
-		other.clone_proj = true;
+	
+	if (hbox_num == 2){
+		other.state = 1;
+		other.state_timer = 0;
+		other.spr_dir = player_id.spr_dir;
+	}
+	
+	if (hbox_num == 3){
+		other.state = 2;
+		other.state_timer = 0;
+	}
+	
+	if (hbox_num == 4){
+		other.state = 3;
+		other.state_timer = 0;
 	}
 		
-		other.shoulddie = true;
     }
     
 if (attack == AT_USPECIAL && (place_meeting(x,y,other.id) && other.player_id = player_id)){
-		other.clone_izuna = true;
-		sound_play(sound_get("clone_blow"));
-		other.shoulddie = true;
-    }
-
+	other.state = 4;
+	other.state_timer = 0;
 }
-
+    
 }
-*/
-
-
 
 
 //State 0: Idle
-if (state == 0){
-	sprite_index = sprite_get("blaster_stand");
+if (state == 0){	//Fazer ficar intercalando entre as masks, quando for 
+	sprite_index = sprite_get("blaster_stand");	
+	mask_index = sprite_get("blaster_mask");
+	hsp = 0;
+	vsp = 0;
 }
+
+//State 1: Launch Forward
+if (state == 1){
+	
+	if (state_timer > 2){
+		create_hitbox(AT_NSPECIAL, 1, x+5*spr_dir, y);
+	}
+	
+	sprite_index = sprite_get("blaster_stand");
+	mask_index = sprite_get("blaster_stand");
+	if (state_timer == 0){
+		hsp = 7*spr_dir;
+		vsp = -4;
+	}
+	if ((spr_dir == 1 && hsp > 0) || (spr_dir == -1 && hsp < 0)){
+			hsp -= .07*spr_dir;
+		}
+		vsp += .3;
+		
+		if (!free){
+			state = 0;
+		}
+}
+
+//State 2: Launch Upward
+if (state == 2){
+	
+	if (state_timer > 2 && vsp < 0){
+		create_hitbox(AT_NSPECIAL, 2, x+5*spr_dir, y);
+	}
+	
+	if (vsp > 0){
+		create_hitbox(AT_NSPECIAL, 3, x+5*spr_dir, y);
+	}
+	
+	sprite_index = sprite_get("blaster_stand");
+	mask_index = sprite_get("blaster_stand");
+	
+	if (state_timer == 0){
+		vsp = -7;
+	}
+	if (state_timer > 10 && vsp < 5){
+		vsp += .2;
+	}
+	if (!free){
+		state = 0;
+	}
+	
+}
+
+//State 3: Launch Downward
+if (state == 3){
+	
+	if (state_timer > 2){
+		create_hitbox(AT_NSPECIAL, 3, x+5*spr_dir, y);
+	}
+	
+	sprite_index = sprite_get("blaster_stand");
+	mask_index = sprite_get("blaster_stand");
+	
+	if (state_timer == 0){
+		vsp = 7;
+	}
+	if (!free){
+		state = 0;
+	}
+	
+}
+
+//State 4: Launch Upward Tanooki
+if (state == 4){
+	
+	if (state_timer > 2 && vsp < 0){
+		create_hitbox(AT_NSPECIAL, 2, x+5*spr_dir, y);
+	}
+	
+	if (vsp > 0){
+		create_hitbox(AT_NSPECIAL, 3, x+5*spr_dir, y);
+	}
+	
+	sprite_index = sprite_get("blaster_stand");
+	mask_index = sprite_get("blaster_stand");
+	
+	if (state_timer == 0){
+		vsp = -5;
+	}
+	if (state_timer > 5 && vsp < 5){
+		vsp += .2;
+	}
+	if (!free){
+		state = 0;
+	}
+	
+}
+
+if ((y + vsp) < 10) || ((x + hsp) < 10)
+|| ((x + hsp) > (room_width + 70)) || ((y + vsp) >= (room_height + 70)){
+		shoulddie = true;
+	}
 
 if (shoulddie == true && state_timer > 20){
 	player_id.killarticles = false;

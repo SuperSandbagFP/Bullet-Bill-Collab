@@ -179,6 +179,12 @@ strong_direction = 0;
 strong_speed = 5;
 blaster_strong_draw = true;
 blaster_dir = 1;
+blaster_anim = 0;
+blaster_anim_frame = -1;
+kamikaze_hit = false;
+
+blaster_mini = 0;
+blaster_mini_shoot = 0;
 
 tanooki_turn = false;
 
@@ -187,4 +193,7 @@ scope_aim_proj = 0;
 scope_fast = false;
 
 torpedo_grab = false;
-grab_dir = 0;
+torpedo_blaster = false;
+
+blaster_smoke_1 = hit_fx_create( sprite_get( "smoke_small" ), 13 );
+blaster_smoke_2 = hit_fx_create( sprite_get( "smoke_small_up" ), 13 );

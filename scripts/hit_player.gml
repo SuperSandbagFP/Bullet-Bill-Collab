@@ -15,8 +15,21 @@ if (my_hitboxID.attack == AT_NSPECIAL_AIR){
         	window = 12;
         	window_timer = 1;
         	kamikaze = 1;
+        	kamikaze_dir = spr_dir;
+        	
+        	if (my_hitboxID.hbox_num == 1 || my_hitboxID.hbox_num == 2){
+        		blaster_anim = 1;
+        	}
+        	
+        	if (my_hitboxID.hbox_num == 5 || my_hitboxID.hbox_num == 6){
+        		blaster_anim = 2;
+        	}
+        	
+        	blaster_anim_frame = 0;
             x = blaster.x;
             y = blaster.y;
+            
+            kamikaze_hit = true;
         }
         
 }
