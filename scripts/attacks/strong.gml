@@ -96,6 +96,7 @@ set_window_value(AT_STRONG, 11, AG_WINDOW_HSPEED, 6);
 set_window_value(AT_STRONG, 11, AG_WINDOW_HSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 11, AG_WINDOW_VSPEED, 6);
 set_window_value(AT_STRONG, 11, AG_WINDOW_VSPEED_TYPE, 1);
+set_window_value(AT_STRONG, 11, AG_WINDOW_GOTO, 13);
 
 set_window_value(AT_STRONG, 12, AG_WINDOW_LENGTH, 6);
 set_window_value(AT_STRONG, 12, AG_WINDOW_ANIM_FRAMES, 2);

@@ -64,10 +64,6 @@ if (state == 0){	//Fazer ficar intercalando entre as masks, quando for
 	mask_index = sprite_get("blaster_mask");
 	hsp = 0;
 	vsp = 0;
-	
-
-
-	
 }
 
 //State 1: Launch Forward
@@ -171,6 +167,16 @@ if (state == 4){
 		state_timer = 30;
 	}
 	
+}
+
+//State 5: Falling when getting hit
+if (state == 5){
+	sprite_index = sprite_get("blaster_stand");	
+	mask_index = sprite_get("blaster_mask");
+	vsp = 5;
+	if (!free){
+		state = 0;
+	}
 }
 
 if (((x + hsp) < 10) || ((x + hsp) > (room_width + 70))){

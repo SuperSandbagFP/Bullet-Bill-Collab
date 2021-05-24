@@ -162,6 +162,10 @@ if (attack == AT_NSPECIAL_AIR){
 
 if (attack == AT_FSPECIAL){
     can_fast_fall = false;
+    if (window == 1 || window > 7){
+        torpedo_grab = false;
+        torpedo_blaster = false;
+    }
     if (window == 4){
         if (!down_down && !up_down){
             if ((attack_pressed || special_pressed) && 
