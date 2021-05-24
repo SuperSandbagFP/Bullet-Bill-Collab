@@ -185,6 +185,7 @@ kamikaze_hit = false;
 
 blaster_mini = 0;
 blaster_mini_shoot = 0;
+mini_dir = 1;
 
 tanooki_turn = false;
 
@@ -197,3 +198,8 @@ torpedo_blaster = false;
 
 blaster_smoke_1 = hit_fx_create( sprite_get( "smoke_small" ), 13 );
 blaster_smoke_2 = hit_fx_create( sprite_get( "smoke_small_up" ), 13 );
+blaster_smoke_3 = hit_fx_create( sprite_get( "smoke_small_down" ), 13 );
+blaster_smoke_4 = hit_fx_create( sprite_get( "smoke_small_up2" ), 13 );
+blaster_smoke_5 = hit_fx_create( sprite_get( "smoke_small_down2" ), 13 );
+
+blaster_smoke_big = hit_fx_create( sprite_get( "smoke_big" ), 20 );

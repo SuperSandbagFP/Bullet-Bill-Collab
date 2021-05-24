@@ -5,23 +5,31 @@ if (attack == AT_DSPECIAL){
 		proj_angle = player_id.scope_aim;	
 	}
 	
+	if (hbox_num == 8){
+		proj_angle = 0;
+		spr_dir = player_id.blaster_dir;
+		hsp = 9*player_id.blaster_dir;
+	}
+	
 	if (hbox_num == 10){
-		proj_angle = 90;	
+		proj_angle = 90*spr_dir;	
+		spr_dir = player_id.blaster_dir;
 	}
 	
 	if (hbox_num == 9){
 		proj_angle = -45*spr_dir;	
+		spr_dir = player_id.blaster_dir;
+		hsp = 6*player_id.blaster_dir;
 	}
 
 	if ((x > player_id.blaster.x-60 && x < player_id.blaster.x+60)  
 	&& (y > player_id.blaster.y-30 && y < player_id.blaster.y+110)){
     
     
-    if (player_id.blaster_mini < 5 && hbox_num < 8){
+    if (player_id.blaster_mini < 5 && hbox_num < 8 && hitbox_timer > 10){
     	player_id.blaster_mini++;
     	destroyed = true;
     }
     	
 	}
-
 }

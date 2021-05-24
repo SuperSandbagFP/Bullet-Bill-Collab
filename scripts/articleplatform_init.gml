@@ -9,6 +9,8 @@ image_xscale *= 2;
 image_yscale *= 2;
 mask_index = sprite_get("blaster_mask");
 shoulddie = false;
+visible = false;
+dying = false;
 
 //State
 state = 0;                                          //The behavior state the article should start in.

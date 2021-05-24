@@ -19,10 +19,29 @@ if (my_hitboxID.attack == AT_NSPECIAL_AIR){
         	
         	if (my_hitboxID.hbox_num == 1 || my_hitboxID.hbox_num == 2){
         		blaster_anim = 1;
+        		strong_direction = 0;
+        	}
+        	
+        	if (my_hitboxID.hbox_num == 3 || my_hitboxID.hbox_num == 4){
+        		blaster_anim = 5;
+        		blaster_dir = -spr_dir;
+        		strong_direction = 2;
         	}
         	
         	if (my_hitboxID.hbox_num == 5 || my_hitboxID.hbox_num == 6){
         		blaster_anim = 2;
+        		strong_direction = 1;
+        	}
+        	
+        	if (my_hitboxID.hbox_num == 7 || my_hitboxID.hbox_num == 8){
+        		blaster_anim = 4;
+        		strong_direction = 1;
+        	}
+        	
+        	if (my_hitboxID.hbox_num == 9 || my_hitboxID.hbox_num == 10){
+        		blaster_anim = 3;
+        		blaster_dir = spr_dir;
+        		strong_direction = 2;
         	}
         	
         	blaster_anim_frame = 0;

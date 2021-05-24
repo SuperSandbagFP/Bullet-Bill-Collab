@@ -71,6 +71,15 @@ if (blaster_anim_frame == 3.5 && kamikaze > 0){
 	if (blaster_anim == 2){
 		spawn_hit_fx( blaster.x-35*spr_dir, blaster.y-105, blaster_smoke_2 );
 	}
+	if (blaster_anim == 3){
+		spawn_hit_fx( blaster.x+20*spr_dir, blaster.y, blaster_smoke_3 );
+	}
+	if (blaster_anim == 4){
+        spawn_hit_fx( blaster.x-35*spr_dir, blaster.y+20, blaster_smoke_4 );
+    }
+    if (blaster_anim == 5){
+		spawn_hit_fx( blaster.x+20*spr_dir, blaster.y-100, blaster_smoke_5 );
+	}
 }
 
 if (blaster_anim_frame > 4){
@@ -122,7 +131,8 @@ if ((state == PS_ATTACK_GROUND || state == PS_ATTACK_AIR) && torpedo_grab == tru
 
 }
 
-if ((state == PS_ATTACK_GROUND || state == PS_ATTACK_AIR) && torpedo_blaster == true && attack == AT_FSPECIAL){
+if ((state == PS_ATTACK_GROUND || state == PS_ATTACK_AIR) && torpedo_grab == false 
+&& torpedo_blaster == true && attack == AT_FSPECIAL){
 	
 	if (window == 2){
 		window = 3;
@@ -155,11 +165,15 @@ if ((state == PS_ATTACK_GROUND || state == PS_ATTACK_AIR) && torpedo_blaster == 
 
 }
 
+if (torpedo_grab == true){
+	torpedo_blaster = false;
+}
+
 if (blaster_mini_shoot == 1){
 	if (blaster_mini == round(blaster_mini) && blaster_mini > 0){
 		create_hitbox(AT_DSPECIAL, 8, blaster.x, blaster.y);
 	}
-	if (blaster_mini > 0){
+	if (blaster_mini > .9){
 		blaster_mini -= .1;	
 	}
 	else {
@@ -168,7 +182,7 @@ if (blaster_mini_shoot == 1){
 }
 
 if (blaster_mini_shoot == 2){
-	if (blaster_mini == 1 || blaster_mini == 2 || blaster_mini == 3 || blaster_mini == 4 || blaster_mini == 5){
+	if (blaster_mini == round(blaster_mini) && blaster_mini > 0){
 		create_hitbox(AT_DSPECIAL, 9, blaster.x, blaster.y);
 	}
 	if (blaster_mini > 0){
@@ -180,7 +194,7 @@ if (blaster_mini_shoot == 2){
 }
 
 if (blaster_mini_shoot == 3){
-	if (blaster_mini == 1 || blaster_mini == 2 || blaster_mini == 3 || blaster_mini == 4 || blaster_mini == 5){
+	if (blaster_mini == round(blaster_mini) && blaster_mini > 0){
 		create_hitbox(AT_DSPECIAL, 10, blaster.x, blaster.y);
 	}
 	if (blaster_mini > 0){
@@ -189,6 +203,12 @@ if (blaster_mini_shoot == 3){
 	else {
 		blaster_mini_shoot = 0;
 	}
+}
+
+if (blaster_mini_shoot != 0){
+	move_cooldown[AT_FSTRONG] = 5;
+	move_cooldown[AT_USTRONG] = 5;
+	move_cooldown[AT_DSTRONG] = 5;
 }
 
 if ((x > blaster.x-60 && x < blaster.x+60) && (y > blaster.y-10 && y < blaster.y+110) && blaster_out == true){

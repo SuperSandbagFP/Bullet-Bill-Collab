@@ -51,13 +51,16 @@ sprite_change_offset("taunt", 32, 62);
 
 sprite_change_offset("plat", 18, 4);
 
-sprite_change_offset("blaster_stand", 8, 5);
-sprite_change_offset("blaster_mask", 8, 29);
+sprite_change_offset("blaster_stand", 8, 3);
+sprite_change_offset("blaster_mask", 8, 5);
 sprite_change_offset("blaster_top_default", 18, 24);
 sprite_change_offset("blaster_top_shoot", 14, 23);
 sprite_change_offset("blaster_top_shoot_up", 17, 22);
+sprite_change_offset("blaster_top_shoot_down", 17, 23);
 
-sprite_change_offset("sniper_scope", 18, 7);
+sprite_change_offset("sniper_scope", 15, 7);
 sprite_change_offset("sniper_arm", 0, 0);
 sprite_change_offset("sniper_bullet", 14, 18);
 sprite_change_offset("sniper_bullet_strong", 14, 18);
+
+sprite_change_offset("smoke_big", 83, 89);

@@ -3,18 +3,26 @@ if (attack == AT_NSPECIAL || attack == AT_FSPECIAL || attack == AT_DSPECIAL || a
     trigger_b_reverse();
 }
 
+//NSpecial - Blaster Build
 if (attack == AT_NSPECIAL){
+    //Despawns the previous blaster
     if (window == 3 && window_timer == 4 && blaster_out == true){
+            spawn_hit_fx( blaster.x, blaster.y, blaster_smoke_big );
             blaster.shoulddie = true;
         }
+    //Builds the Blaster
     if (window == 3 && window_timer == 8){
         blaster = instance_create(x, y-48, "obj_article_platform");
+        spawn_hit_fx( blaster.x, blaster.y, blaster_smoke_big );
         blaster_out = true;
+        blaster_mini = 0;
     }
 }
 
+//NSpecial_Air - Kamikaze Bill
 if (attack == AT_NSPECIAL_AIR){
-    if (window == 1 && window_timer < 15 && blaster_out == true && shield_pressed && !free){
+    //Goes to regular NSpecial if Parry is pressed at the first 15 frames
+    if (window == 1 && window_timer < 15 && blaster_out == true && shield_pressed && !free && blaster_close == false){
         attack = AT_NSPECIAL;
         window_timer = 1;
         hurtboxID.sprite_index = sprite_get("nspecial_hurt");
@@ -77,21 +85,22 @@ if (attack == AT_NSPECIAL_AIR){
                     blaster_anim = 1;  
                 }
                 if (kamikaze_strong == 4){
-                    blaster_anim = 2;  
+                    blaster_anim = 5;  
                 }
                 if (kamikaze_strong == 6){
-                    blaster_anim = 1;  
-                }
-                if (kamikaze_strong == 8){
                     blaster_anim = 2;  
                 }
+                if (kamikaze_strong == 8){
+                    blaster_anim = 4;  
+                }
                 if (kamikaze_strong == 10){
-                    blaster_anim = 1;  
+                    blaster_anim = 3;  
                 }
         	    blaster_anim_frame = 0;
                 x = blaster.x;
                 y = blaster.y;
                 blaster.shoulddie = true;
+                blaster.dying = true;
                 blaster.state_timer = 0;
             }
         }
@@ -242,7 +251,7 @@ if (attack == AT_DSPECIAL){
         scope_aim = 0;
     }
     if (window == 2){
-        if (!special_down && state_timer > 24){
+        if (!special_down && state_timer > 30){
             window = 3;  
             window_timer = 1;
         }
@@ -364,8 +373,9 @@ if (attack == AT_STRONG){
                 strong_direction = 1;
             }
             if (down_strong_pressed){
-                set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAME_START, 2);
+                set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAME_START, 0);
                 set_window_value(AT_STRONG, 12, AG_WINDOW_GOTO, 10);
+                set_attack_value(AT_STRONG, AG_SPRITE, sprite_get("blaster_top_shoot_down"));
                 strong_direction = 2;
             }
         }
@@ -392,6 +402,9 @@ if (attack == AT_STRONG){
         }
         if (strong_direction == 1){
             spawn_hit_fx( blaster.x-35*spr_dir, blaster.y-105, blaster_smoke_2 );
+        }
+        if (strong_direction == 2){
+            spawn_hit_fx( blaster.x+20*spr_dir, blaster.y, blaster_smoke_3 );
         }
     }
     
@@ -466,6 +479,7 @@ if (attack == AT_FSTRONG){
         create_hitbox(AT_FSTRONG, 2, blaster.x+50*spr_dir, blaster.y-10);
         strong_direction = 0;
         sound_play(asset_get("sfx_ell_strong_attack_explosion"));
+        blaster_dir = spr_dir;
         
         if (blaster_mini != 0 && blaster_out == true){
             blaster_mini_shoot = 1;
@@ -485,6 +499,7 @@ if (attack == AT_USTRONG){
         create_hitbox(AT_USTRONG, 2, blaster.x, blaster.y-40);
         strong_direction = 1;
         sound_play(asset_get("sfx_ell_strong_attack_explosion"));
+        blaster_dir = spr_dir;
         
         if (blaster_mini != 0 && blaster_out == true){
             blaster_mini_shoot = 3;
@@ -493,8 +508,15 @@ if (attack == AT_USTRONG){
 }
 
 if (attack == AT_DSTRONG){
-    if (window == 2 && window_timer == 3 && !hitpause && blaster_out == true){
-        spawn_hit_fx( blaster.x+40*spr_dir, blaster.y+30, 139);
+    
+    if (window == 1 && window_timer == 1){
+        blaster_anim = 3;
+        blaster_anim_frame = 0;
+        blaster_dir = spr_dir;
+    }
+    
+    if (window == 2 && window_timer == 4 && !hitpause && blaster_out == true){
+        spawn_hit_fx( blaster.x+25*spr_dir, blaster.y, blaster_smoke_3);
         create_hitbox(AT_DSTRONG, 2, blaster.x+40*spr_dir, blaster.y+30);
         strong_direction = 2;
         blaster_dir = spr_dir;
