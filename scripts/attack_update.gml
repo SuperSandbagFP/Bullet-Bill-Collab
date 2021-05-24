@@ -177,13 +177,18 @@ if (attack == AT_NSPECIAL_AIR){
     
 }
 
+//FSpecial - Torpedo Ted Grab
 if (attack == AT_FSPECIAL){
     can_fast_fall = false;
+    //Resets the grab values
     if (window == 1 || window > 7){
         torpedo_grab = false;
         torpedo_blaster = false;
     }
+    
+    //Flying while the player/blaster is grabbed
     if (window == 4){
+        //Throws at different directions, and also changes the momentum slightly
         if (!down_down && !up_down){
             if ((attack_pressed || special_pressed) && 
             ((state_timer > 40 && torpedo_grab == true) || (state_timer > 0 && torpedo_blaster == true))){
@@ -219,6 +224,7 @@ if (attack == AT_FSPECIAL){
             vsp-=.2;
         }
         
+        //Thows it autmoatically
         if ((state_timer > 60 && torpedo_grab == true) || (state_timer > 90 && torpedo_blaster == true)){
             if (!down_down && !up_down){
                 window = 5;
@@ -238,10 +244,13 @@ if (attack == AT_FSPECIAL){
     }
 }
 
+//USpecial - Tannoki Tail
 if (attack == AT_USPECIAL){
+    //Resets the variable
     if (window == 1){
         tanooki_turn = false;
     }
+    //On the ground it doesn go up into pratfall, unlike the air version
     if (!free){
         set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED_TYPE, 0);
         set_window_value(AT_USPECIAL, 2, AG_WINDOW_VSPEED, 0);
@@ -266,16 +275,20 @@ if (attack == AT_USPECIAL){
     }
 }
 
+//DSpecial - Sniper Bill
 if (attack == AT_DSPECIAL){
+    //Resets the variables and aim
     if (window == 1){
         scope_fast = false;
         scope_aim = 0;
     }
+    //Aiming, need to wait a couple of frames before you shoot
     if (window == 2){
         if (!special_down && state_timer > 30){
             window = 3;  
             window_timer = 1;
         }
+        //Hold Special and move up/down to aim
         else {
             if (up_down && scope_aim >= -30 && scope_aim <= 30){
                 scope_aim += spr_dir*2;
@@ -291,6 +304,7 @@ if (attack == AT_DSPECIAL){
             }
         }
     }
+    //Each direction spawns a different Mini Bill hitbox
     if (window == 3){
         if (window_timer == 1){
             spawn_hit_fx( x+30*spr_dir, y-90, blaster_smoke_1 );
@@ -361,8 +375,10 @@ if (attack == AT_DSPECIAL){
     }
 }
 
+//Strong Gimmick - Blaster Blast
 if (attack == AT_STRONG){
     
+        //Speed changes with the charge timer
         can_fast_fall = false;
         set_window_value(AT_STRONG, 2, AG_WINDOW_HSPEED, 9+strong_charge/3);
         set_window_value(AT_STRONG, 4, AG_WINDOW_HSPEED, 6+strong_charge/3);
@@ -372,7 +388,7 @@ if (attack == AT_STRONG){
         set_window_value(AT_STRONG, 10, AG_WINDOW_HSPEED, 6+strong_charge/3);
         set_window_value(AT_STRONG, 10, AG_WINDOW_VSPEED, 6+strong_charge/3);
         
-    
+    //Charging the Strong
     if (window == 1 || window == 12){
         if ((right_strong_down || left_strong_down || up_strong_down || down_strong_down) && window == 1){
             strong_down = true;
@@ -380,6 +396,7 @@ if (attack == AT_STRONG){
         
         blaster_dir = spr_dir;
         blaster_strong_draw = false;
+        //Setting up each of the directions
         if (window_timer == 1 && window == 1){
             if (right_strong_pressed || left_strong_pressed){
                 set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAME_START, 0);
@@ -404,19 +421,22 @@ if (attack == AT_STRONG){
         x = blaster.x;
         y = blaster.y;
     }
+    //Releases the charge
     else {
         set_attack_value(AT_STRONG, AG_SPRITE, sprite_get("strong"));
         blaster_strong_draw = true;
     }
+    //Going forward
     if (window == 2 && window_timer == 1){
         x = blaster.x +50*spr_dir;
         y = blaster.y +30;
     }
+    //Going diagonally down
     if (window == 10 && window_timer == 1){
         x = blaster.x +40*spr_dir;
         y = blaster.y +50;
     }
-    
+    //Spawing the smoke effect
     if (window == 12 && window_timer == 3){
         if (strong_direction == 0){
             spawn_hit_fx( blaster.x+30*spr_dir, blaster.y-45, blaster_smoke_1 );
@@ -429,7 +449,7 @@ if (attack == AT_STRONG){
         }
     }
     
-    
+    //Bouncing off the terrain
     if (window_timer > 2){
     
     if ((window == 2 || window == 3) && hsp == 0 && window_timer > 0 && !hitpause){
@@ -488,13 +508,16 @@ if (attack == AT_STRONG){
     
 }
 
+//FStrong - Blaster Command Forward
 if (attack == AT_FSTRONG){
     
+    //Resets the variables
     if (window == 1 && window_timer == 1){
         blaster_anim = 1;
         blaster_anim_frame = 0;
     }
-
+    
+    //Spawns the explosion
     if (window == 2 && window_timer == 4 && !hitpause && blaster_out == true){
         spawn_hit_fx( blaster.x+30*spr_dir, blaster.y-45, blaster_smoke_1);
         create_hitbox(AT_FSTRONG, 2, blaster.x+50*spr_dir, blaster.y-10);
@@ -502,19 +525,23 @@ if (attack == AT_FSTRONG){
         sound_play(asset_get("sfx_ell_strong_attack_explosion"));
         blaster_dir = spr_dir;
         
+        //Tells the game to spawn the mini bills forward
         if (blaster_mini != 0 && blaster_out == true){
             blaster_mini_shoot = 1;
         }
     }
 }
 
+//UStrong - Blaster Command Upward
 if (attack == AT_USTRONG){
     
+    //Resets the variables
     if (window == 1 && window_timer == 1){
         blaster_anim = 2;
         blaster_anim_frame = 0;
     }
     
+    //Spawns the explosion
     if (window == 2 && window_timer == 4 && !hitpause && blaster_out == true){
         spawn_hit_fx( blaster.x-35*spr_dir, blaster.y-105, blaster_smoke_2);
         create_hitbox(AT_USTRONG, 2, blaster.x, blaster.y-40);
@@ -522,20 +549,24 @@ if (attack == AT_USTRONG){
         sound_play(asset_get("sfx_ell_strong_attack_explosion"));
         blaster_dir = spr_dir;
         
+        //Tells the game to spawn the mini bills upward
         if (blaster_mini != 0 && blaster_out == true){
             blaster_mini_shoot = 3;
         }
     }
 }
 
+//DStrong - Blaster Command Diagonally Downward
 if (attack == AT_DSTRONG){
     
+    //Resets the variables
     if (window == 1 && window_timer == 1){
         blaster_anim = 3;
         blaster_anim_frame = 0;
         blaster_dir = spr_dir;
     }
     
+    //Spawns the explosion
     if (window == 2 && window_timer == 4 && !hitpause && blaster_out == true){
         spawn_hit_fx( blaster.x+25*spr_dir, blaster.y, blaster_smoke_3);
         create_hitbox(AT_DSTRONG, 2, blaster.x+40*spr_dir, blaster.y+30);
@@ -543,6 +574,7 @@ if (attack == AT_DSTRONG){
         blaster_dir = spr_dir;
         sound_play(asset_get("sfx_ell_strong_attack_explosion"));
         
+        //Tells the game to spawn the mini bills diagonally down
         if (blaster_mini != 0 && blaster_out == true){
             blaster_mini_shoot = 2;
         }

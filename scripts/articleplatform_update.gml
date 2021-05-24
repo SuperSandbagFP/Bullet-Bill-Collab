@@ -13,44 +13,49 @@
 
 state_timer++;
 
+//Spawining with NSpecial, the smoke comes out and then it becomes visible
 if (state == 0 && state_timer < 10 && dying == false){
 	visible = false;
 }
-
 else {
 	visible = true;
 }
 
-
+//Hitbox stuff
 with (asset_get("pHitBox")){
+
 
 if (attack == AT_FSPECIAL && (place_meeting(x,y,other.id) && other.player_id = player_id)){
 	
-	
+	//Getting Grabbed, only happens if haven't grabbed a player
 	if (hbox_num == 1 && player_id.torpedo_blaster == false && player_id.hitpause == false){
 		sound_play(asset_get("sfx_clairen_nspecial_grab_success"));
 		player_id.torpedo_blaster = true;
 		other.spr_dir = player_id.spr_dir;
 	}
 	
+	//Forward Throw
 	if (hbox_num == 2 && player_id.torpedo_blaster == false){
 		other.state = 1;
 		other.state_timer = 0;
 		other.spr_dir = player_id.spr_dir;
 	}
 	
+	//Up Throw
 	if (hbox_num == 3 && player_id.torpedo_blaster == false){
 		other.state = 2;
 		other.state_timer = 0;
 	}
 	
+	//Down Throw
 	if (hbox_num == 4 && player_id.torpedo_blaster == false){
 		other.state = 3;
 		other.state_timer = 0;
 	}
 		
     }
-    
+
+//Hitting with the Tanooki Tail   
 if (attack == AT_USPECIAL && (place_meeting(x,y,other.id) && other.player_id = player_id)){
 	other.state = 4;
 	other.state_timer = 0;
@@ -60,7 +65,7 @@ if (attack == AT_USPECIAL && (place_meeting(x,y,other.id) && other.player_id = p
 
 
 //State 0: Idle
-if (state == 0){	//Fazer ficar intercalando entre as masks, quando for 
+if (state == 0){	
 	sprite_index = sprite_get("blaster_stand");	
 	mask_index = sprite_get("blaster_mask");
 	hsp = 0;
@@ -140,6 +145,7 @@ if (state == 3){
 	
 }
 
+//Plays the ''getting hit'' sound when being thrown
 if (state >= 1 && state < 4 && state_timer == 1){
 		sound_play(asset_get("sfx_blow_heavy2"));
 }
@@ -186,6 +192,7 @@ if (state == 5){
 	}
 }
 
+//Die of the side blastzone
 if (((x + hsp) < 10) || ((x + hsp) > (room_width + 70))){
 		shoulddie = true;
 	}
@@ -193,10 +200,12 @@ if (((x + hsp) < 10) || ((x + hsp) > (room_width + 70))){
 var stage_y = get_stage_data( SD_Y_POS );
 var stage_b = get_stage_data( SD_BOTTOM_BLASTZONE );
 
+//Die from the bottom blastzone
 if (stage_y + stage_b < y){
 	shoulddie = true;
 }
 
+//Dying of course
 if (shoulddie == true && state_timer > 20){
 	player_id.killarticles = false;
 	player_id.blaster_out = false;
@@ -204,6 +213,7 @@ if (shoulddie == true && state_timer > 20){
     exit;
 }
 
+//This is so the platform sprite doesn't fall of the ground, but still has gravity
 if (state == 0){
 		if (!free || !freemd){
 			y-=1;

@@ -3,6 +3,13 @@ if (!free || state == PS_WALL_JUMP){
     move_cooldown[AT_NSPECIAL_AIR] = 0;
 }
 
+//Spawn Hologram at the start
+if (blaster_start == false){
+    blaster = instance_create(x, y-48, "obj_article_platform");
+    blaster_out = true;
+    blaster_start = true;
+}
+
 if (state == PS_ATTACK_AIR && attack == AT_NSPECIAL_AIR){
     can_fast_fall = false;
 }
@@ -227,4 +234,18 @@ else {
     move_cooldown[AT_STRONG] = 999;
 }
 
+if (introTimer2 < [number of frames desired per animation frame]) {
+    introTimer2++;
+} else {
+    introTimer2 = 0;
+    introTimer++;
+}
+//this increments introTimer every few frames, depending on the number entered
 
+if (introTimer < [number of animation frames]) {
+    draw_indicator = false;
+} else {
+    draw_indicator = true;
+}
+//this stops the overhead HUD from getting in the way of the animation. 
+//If your animation does not involve much movement, this may not be necessary.
