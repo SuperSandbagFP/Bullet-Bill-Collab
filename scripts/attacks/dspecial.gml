@@ -241,7 +241,7 @@ set_hitbox_value(AT_DSPECIAL, 8, HG_PROJECTILE_UNBASHABLE, false);
 set_hitbox_value(AT_DSPECIAL, 8, HG_PROJECTILE_PARRY_STUN, false);
 set_hitbox_value(AT_DSPECIAL, 8, HG_PROJECTILE_DOES_NOT_REFLECT, false);
 set_hitbox_value(AT_DSPECIAL, 8, HG_PROJECTILE_IS_TRANSCENDENT, false);
-set_hitbox_value(AT_DSPECIAL, 8, HG_HIT_SFX, asset_get("sfx_abyss_hazard_hit"));
+set_hitbox_value(AT_DSPECIAL, 8, HG_HIT_SFX, asset_get("sfx_ell_explosion_medium"));
 
 set_hitbox_value(AT_DSPECIAL, 9, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 9, HG_WINDOW, 9);
@@ -267,7 +267,7 @@ set_hitbox_value(AT_DSPECIAL, 9, HG_PROJECTILE_UNBASHABLE, false);
 set_hitbox_value(AT_DSPECIAL, 9, HG_PROJECTILE_PARRY_STUN, false);
 set_hitbox_value(AT_DSPECIAL, 9, HG_PROJECTILE_DOES_NOT_REFLECT, false);
 set_hitbox_value(AT_DSPECIAL, 9, HG_PROJECTILE_IS_TRANSCENDENT, false);
-set_hitbox_value(AT_DSPECIAL, 9, HG_HIT_SFX, asset_get("sfx_abyss_hazard_hit"));
+set_hitbox_value(AT_DSPECIAL, 9, HG_HIT_SFX, asset_get("sfx_ell_dspecial_hit"));
 
 set_hitbox_value(AT_DSPECIAL, 10, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 10, HG_WINDOW, 9);
@@ -293,4 +293,4 @@ set_hitbox_value(AT_DSPECIAL, 10, HG_PROJECTILE_UNBASHABLE, false);
 set_hitbox_value(AT_DSPECIAL, 10, HG_PROJECTILE_PARRY_STUN, false);
 set_hitbox_value(AT_DSPECIAL, 10, HG_PROJECTILE_DOES_NOT_REFLECT, false);
 set_hitbox_value(AT_DSPECIAL, 10, HG_PROJECTILE_IS_TRANSCENDENT, false);
-set_hitbox_value(AT_DSPECIAL, 10, HG_HIT_SFX, asset_get("sfx_abyss_hazard_hit"));
+set_hitbox_value(AT_DSPECIAL, 10, HG_HIT_SFX, asset_get("sfx_ell_dspecial_hit"));

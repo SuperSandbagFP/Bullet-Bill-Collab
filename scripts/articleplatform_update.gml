@@ -27,7 +27,8 @@ with (asset_get("pHitBox")){
 if (attack == AT_FSPECIAL && (place_meeting(x,y,other.id) && other.player_id = player_id)){
 	
 	
-	if (hbox_num == 1){
+	if (hbox_num == 1 && player_id.torpedo_blaster == false && player_id.hitpause == false){
+		sound_play(asset_get("sfx_clairen_nspecial_grab_success"));
 		player_id.torpedo_blaster = true;
 		other.spr_dir = player_id.spr_dir;
 	}
@@ -68,6 +69,8 @@ if (state == 0){	//Fazer ficar intercalando entre as masks, quando for
 
 //State 1: Launch Forward
 if (state == 1){
+	
+	
 	
 	if (state_timer > 2){
 		create_hitbox(AT_NSPECIAL, 1, x+5*spr_dir, y);
@@ -137,6 +140,10 @@ if (state == 3){
 	
 }
 
+if (state >= 1 && state < 4 && state_timer == 1){
+		sound_play(asset_get("sfx_blow_heavy2"));
+}
+
 //State 4: Launch Upward Tanooki
 if (state == 4){
 	
@@ -199,7 +206,7 @@ if (shoulddie == true && state_timer > 20){
 
 if (state == 0){
 		if (!free || !freemd){
-			y-=2;
+			y-=1;
 			}
 		else {
 			vsp = 5;	

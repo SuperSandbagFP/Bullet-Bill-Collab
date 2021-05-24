@@ -9,9 +9,16 @@ if (state == PS_ATTACK_AIR && attack == AT_NSPECIAL_AIR){
 
 move_cooldown[AT_STRONG] = 999;
 
+if (state == PS_ATTACK_GROUND && attack == AT_STRONG && window == 1 && window_timer == 0){
+	spawn_hit_fx( x, y-20, blaster_smoke_big );
+}
+
 if (kamikaze > 0 && !hitpause){
     kamikaze++;
     spr_dir = kamikaze_dir;
+    if (kamikaze == 2){
+    	sound_play(asset_get("sfx_ell_fist_fire"));
+    }
     if (kamikaze > 2){
 
         

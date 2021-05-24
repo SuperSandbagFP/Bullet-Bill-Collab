@@ -9,9 +9,11 @@ if (attack == AT_NSPECIAL){
     if (window == 3 && window_timer == 4 && blaster_out == true){
             spawn_hit_fx( blaster.x, blaster.y, blaster_smoke_big );
             blaster.shoulddie = true;
+            sound_play(asset_get("sfx_ell_uspecial_explode"));
         }
     //Builds the Blaster
     if (window == 3 && window_timer == 8){
+        sound_play(asset_get("sfx_ell_uspecial_rebuild"));
         blaster = instance_create(x, y-48, "obj_article_platform");
         spawn_hit_fx( blaster.x, blaster.y, blaster_smoke_big );
         blaster_out = true;
@@ -27,10 +29,12 @@ if (attack == AT_NSPECIAL_AIR){
         window_timer = 1;
         hurtboxID.sprite_index = sprite_get("nspecial_hurt");
     }
+    //Startup before the movement happens
     if (window == 1 && window_timer == 15){
         kamikaze_hit = false;
         has_hit = false;
         move_cooldown[AT_NSPECIAL_AIR] = 999;
+        
         if (spr_dir == 1 && left_down == true){
             spr_dir = -1;
         }
@@ -39,26 +43,31 @@ if (attack == AT_NSPECIAL_AIR){
         }
         kamikaze_dir = spr_dir;
         
+        //Horizontally
         if ((joy_pad_idle || right_down || left_down) && !up_down && !down_down){
             window = 2;
             kamikaze_strong = 2;
             window_timer = 1;
         }
+        //Diagonallly Up
         if ((right_down || left_down) && up_down && !down_down){
             window = 4;
             kamikaze_strong = 4;
             window_timer = 1;
         }
+        //Vertically Up
         if (up_down && !right_down && !left_down && !down_down){
             window = 6;
             kamikaze_strong = 6;
             window_timer = 1;
         }
+        //Vertically Down
         if (down_down && !right_down && !left_down && !up_down){
             window = 8;
             kamikaze_strong = 8;
             window_timer = 1;
         }
+        //Diagonallly Down
         if ((right_down || left_down) && !up_down && down_down){
             window = 10;
             kamikaze_strong = 10;
@@ -66,14 +75,18 @@ if (attack == AT_NSPECIAL_AIR){
         }
     }
     
+    //The moment Bill hitts a terrain
     if (state_timer >= 20 && window != 12 && !hitpause){
         if (((window == 10 || window == 11 || window <= 5) && hsp == 0)
         || (window >= 4 && (vsp == .5 || vsp == 0))){
             spawn_hit_fx( x, y, 143);
+            
             if (blaster_out == false){
                 create_deathbox( x+50, y, 200, 200, player, true, 0, 2, 2); 
             }
+            
             else {
+                take_damage(player, -1, 10);
                 blaster_dir = spr_dir;
                 destroy_hitboxes();
                 kamikaze = 1;
@@ -106,8 +119,7 @@ if (attack == AT_NSPECIAL_AIR){
         }
     }
     
-    
-    
+    //The speed up/down from each window
     if (state_timer > 15 && state_timer < 25){
         switch (window){
             case 2:
@@ -127,6 +139,9 @@ if (attack == AT_NSPECIAL_AIR){
                 hsp = 4*spr_dir; 
                 vsp = 4;    
             break
+        }
+        if (state_timer == 16){
+            sound_play(asset_get("sfx_ell_big_missile_fire"));
         }
         
     }
@@ -153,6 +168,8 @@ if (attack == AT_NSPECIAL_AIR){
     }
     
     if (state_timer == 45){
+        sound_play(asset_get("sfx_ell_overheat"));
+        take_damage(player, -1, 5);
         window += 1;
         window_timer = 1;
     }
@@ -169,7 +186,7 @@ if (attack == AT_FSPECIAL){
     if (window == 4){
         if (!down_down && !up_down){
             if ((attack_pressed || special_pressed) && 
-            ((state_timer > 50 && torpedo_grab == true) || (state_timer > 0 && torpedo_blaster == true))){
+            ((state_timer > 40 && torpedo_grab == true) || (state_timer > 0 && torpedo_blaster == true))){
                 window = 5;
                 window_timer = 1;
             }
@@ -187,7 +204,7 @@ if (attack == AT_FSPECIAL){
         }
         if (down_down){
             if ((attack_pressed || special_pressed) && 
-            ((state_timer > 50 && torpedo_grab == true) || (state_timer > 0 && torpedo_blaster == true))){
+            ((state_timer > 40 && torpedo_grab == true) || (state_timer > 0 && torpedo_blaster == true))){
                 window = 7;
                 window_timer = 1;
             }
@@ -195,7 +212,7 @@ if (attack == AT_FSPECIAL){
         }
         if (up_down){
             if ((attack_pressed || special_pressed) && 
-            ((state_timer > 50 && torpedo_grab == true) || (state_timer > 0 && torpedo_blaster == true))){
+            ((state_timer > 40 && torpedo_grab == true) || (state_timer > 0 && torpedo_blaster == true))){
                 window = 6;
                 window_timer = 1;
             }

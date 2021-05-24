@@ -14,6 +14,8 @@ set_window_value(AT_NSPECIAL, 1, AG_WINDOW_SFX_FRAME, 4);
 set_window_value(AT_NSPECIAL, 2, AG_WINDOW_LENGTH, 8);
 set_window_value(AT_NSPECIAL, 2, AG_WINDOW_ANIM_FRAMES, 4);
 set_window_value(AT_NSPECIAL, 2, AG_WINDOW_ANIM_FRAME_START, 3);
+set_window_value(AT_NSPECIAL, 2, AG_WINDOW_HAS_SFX, 1);
+set_window_value(AT_NSPECIAL, 2, AG_WINDOW_SFX, asset_get("sfx_spin"));
 
 set_window_value(AT_NSPECIAL, 3, AG_WINDOW_LENGTH, 8);
 set_window_value(AT_NSPECIAL, 3, AG_WINDOW_ANIM_FRAMES, 4);
