@@ -19,10 +19,10 @@ sprite_change_offset("pratfall", 6, 22);
 sprite_change_offset("land", 12, 24);
 sprite_change_offset("landinglag", 12, 24);
 
-sprite_change_offset("parry", 32, 62);
+sprite_change_offset("parry", 15, 30);
 sprite_change_offset("roll_forward", 11, 25);
 sprite_change_offset("roll_backward", 11, 25);
-sprite_change_offset("airdodge", 32, 62);
+sprite_change_offset("airdodge", 15, 24);
 sprite_change_offset("waveland", 11, 24);
 sprite_change_offset("tech", 14, 26);
 
