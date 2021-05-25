@@ -192,6 +192,17 @@ if (state == 5){
 	}
 }
 
+//State 6: Intro
+if (state == 6){
+	sprite_index = sprite_get("blaster_stand");	
+	mask_index = sprite_get("blaster_mask");
+	vsp = 0;
+	hsp = 0;
+	if(get_gameplay_time() >= 120){
+		state = 0;
+	}
+}
+
 //Die of the side blastzone
 if (((x + hsp) < 10) || ((x + hsp) > (room_width + 70))){
 		shoulddie = true;

@@ -13,7 +13,7 @@ visible = false;
 dying = false;
 
 //State
-state = 0;                                          //The behavior state the article should start in.
+state = 6;                                          //The behavior state the article should start in.
 state_timer = 0;                                    //The point in time during that state the article should start in. (0 = beginning)
 hitstop = 0;                                        //The frames remaining in hitpause. Hitpause automatically prevents movement
 hsp = 0;                                            //The horizontal speed of the article. Multiply by spr_dir to correctly handle forward (+) or backward (-) movement

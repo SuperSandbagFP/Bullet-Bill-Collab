@@ -56,7 +56,7 @@ sprite_change_offset("blaster_mask", 8, 5);
 sprite_change_offset("blaster_top_default", 18, 24);
 sprite_change_offset("blaster_top_shoot", 14, 23);
 sprite_change_offset("blaster_top_shoot_up", 17, 22);
-sprite_change_offset("blaster_top_shoot_down", 17, 23);
+sprite_change_offset("blaster_top_shoot_down", 19, 25);
 
 sprite_change_offset("sniper_scope", 15, 7);
 sprite_change_offset("sniper_arm", 0, 0);

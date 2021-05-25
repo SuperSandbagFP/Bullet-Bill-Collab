@@ -5,7 +5,7 @@ if (!free || state == PS_WALL_JUMP){
 
 //Spawn Hologram at the start
 if (blaster_start == false){
-    blaster = instance_create(x, y-48, "obj_article_platform");
+    blaster = instance_create(x-80*spr_dir, y-48, "obj_article_platform");
     blaster_out = true;
     blaster_start = true;
 }
@@ -234,7 +234,7 @@ else {
     move_cooldown[AT_STRONG] = 999;
 }
 
-if (introTimer2 < [number of frames desired per animation frame]) {
+if (introTimer2 < 10) {
     introTimer2++;
 } else {
     introTimer2 = 0;
@@ -242,7 +242,7 @@ if (introTimer2 < [number of frames desired per animation frame]) {
 }
 //this increments introTimer every few frames, depending on the number entered
 
-if (introTimer < [number of animation frames]) {
+if (introTimer < 10) {
     draw_indicator = false;
 } else {
     draw_indicator = true;
