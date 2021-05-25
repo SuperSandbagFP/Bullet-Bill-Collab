@@ -1,3 +1,8 @@
+if(get_gameplay_time() < 120 && free){
+		draw_sprite_ext(sprite_get("plat"), get_gameplay_time()*.3, 
+        x-4*player_id.blaster_dir, y+50, player_id.blaster_dir*2, 2, 0, c_white, 1 );
+	}
+
 if (player_id.blaster_strong_draw == true) {
     
     if (player_id.blaster_anim == 0){

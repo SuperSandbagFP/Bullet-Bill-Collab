@@ -196,7 +196,7 @@ scope_fast = false;
 torpedo_grab = false;
 torpedo_blaster = false;
 
-
+resort_portrait = asset_get("empty_sprite");
 
 blaster_smoke_1 = hit_fx_create( sprite_get( "smoke_small" ), 13 );
 blaster_smoke_2 = hit_fx_create( sprite_get( "smoke_small_up" ), 13 );
@@ -205,6 +205,8 @@ blaster_smoke_4 = hit_fx_create( sprite_get( "smoke_small_up2" ), 13 );
 blaster_smoke_5 = hit_fx_create( sprite_get( "smoke_small_down2" ), 13 );
 
 blaster_smoke_big = hit_fx_create( sprite_get( "smoke_big" ), 20 );
+
+blaster_intro = hit_fx_create( sprite_get( "intro" ), 20 );
 
 introTimer = -4;
 //setting it to -4 should prevent the first few frames of the animation from being blocked by the screen opening. 

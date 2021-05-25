@@ -91,6 +91,7 @@ if (attack == AT_NSPECIAL_AIR){
                 destroy_hitboxes();
                 kamikaze = 1;
                 visible = false;
+                invincible = true;
                 sound_play(asset_get("sfx_death1"));
                 window = 12;
                 window_timer = 1;

@@ -21,6 +21,25 @@ else {
 	visible = true;
 }
 
+//platform
+if (state == 0){
+if(!position_meeting(x, y+50, asset_get("par_block"))){
+            y-=1;
+        }
+if(!position_meeting(x, y+50, asset_get("par_jumpthrough"))){
+            visible = true;
+        }
+
+if((!position_meeting(x, y+50, asset_get("par_block"))) &&
+(!position_meeting(x, y+50, asset_get("par_jumpthrough")))){
+	y += 5;
+}
+else {
+	y = y;
+}
+
+}
+
 //Hitbox stuff
 with (asset_get("pHitBox")){
 
@@ -116,7 +135,7 @@ if (state == 2){
 		vsp = -7;
 	}
 	if (state_timer > 10 && vsp < 5){
-		vsp += .4;
+		vsp += .5;
 	}
 	if (!free){
 		state = 0;
@@ -170,7 +189,7 @@ if (state == 4){
 		hsp = 2*spr_dir;
 	}
 	if (state_timer > 5 && vsp < 5){
-		vsp += .4;
+		vsp += .5;
 	}
 	if ((spr_dir == 1 && hsp > 0) || (spr_dir == -1 && hsp < 0)){
 			hsp -= .05*spr_dir;
@@ -224,15 +243,6 @@ if (shoulddie == true && state_timer > 20){
     exit;
 }
 
-//This is so the platform sprite doesn't fall of the ground, but still has gravity
-if (state == 0){
-		if (!free || !freemd){
-			y-=1;
-			}
-		else {
-			vsp = 5;	
-		}
-}
 
 /*
 

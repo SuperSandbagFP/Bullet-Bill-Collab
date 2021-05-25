@@ -13,6 +13,7 @@ if (my_hitboxID.attack == AT_NSPECIAL_AIR){
         	destroy_hitboxes();
         	sound_play(asset_get("sfx_death1"));
         	visible = false;
+        	invincible = true;
         	window = 12;
         	window_timer = 1;
         	kamikaze = 1;

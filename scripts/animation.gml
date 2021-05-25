@@ -8,4 +8,18 @@ if (state == PS_SPAWN) {
     } else {
         sprite_index = sprite_get("idle");
     }
+    
+    
+    if(get_gameplay_time() == 95){
+		blaster_anim = 1;
+        blaster_anim_frame = 0;
+	}
+
+if(get_gameplay_time() == 105){
+		spawn_hit_fx( blaster.x+30*spr_dir, blaster.y-45, blaster_smoke_1);
+		sound_play(asset_get("sfx_ell_strong_attack_explosion"));
+		spawn_hit_fx( x, y, blaster_intro);
+	}
+    
 }
+

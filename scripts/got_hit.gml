@@ -5,6 +5,6 @@ blaster_strong_draw = true;
 torpedo_grab = false;
 
 if (torpedo_blaster == true){
-    blaster.state = 5;
+    blaster.state = 0;
     torpedo_blaster = false;
 }
