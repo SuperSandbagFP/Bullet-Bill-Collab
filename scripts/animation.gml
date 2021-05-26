@@ -15,7 +15,7 @@ if (state == PS_SPAWN) {
         blaster_anim_frame = 0;
 	}
 
-if(get_gameplay_time() == 105){
+if(get_gameplay_time() == 113){
 		spawn_hit_fx( blaster.x+30*spr_dir, blaster.y-45, blaster_smoke_1);
 		sound_play(sound_get("blaster_smb3"));
 		spawn_hit_fx( x, y, blaster_intro);
