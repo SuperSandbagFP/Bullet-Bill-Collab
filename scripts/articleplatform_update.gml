@@ -40,6 +40,8 @@ else {
 
 }
 
+
+
 //Hitbox stuff
 with (asset_get("pHitBox")){
 
@@ -48,7 +50,7 @@ if (attack == AT_FSPECIAL && (place_meeting(x,y,other.id) && other.player_id = p
 	
 	//Getting Grabbed, only happens if haven't grabbed a player
 	if (hbox_num == 1 && player_id.torpedo_blaster == false && player_id.hitpause == false){
-		sound_play(sound_get("grab_smw"));
+		sound_play(asset_get("sfx_clairen_nspecial_grab_success"));
 		player_id.torpedo_blaster = true;
 		other.spr_dir = player_id.spr_dir;
 	}
@@ -166,7 +168,7 @@ if (state == 3){
 
 //Plays the ''getting hit'' sound when being thrown
 if (state >= 1 && state < 4 && state_timer == 1){
-		sound_play(asset_get("sfx_blow_heavy2"));
+		sound_play(sound_get("hitfxslam_smw"));
 }
 
 //State 4: Launch Upward Tanooki
@@ -248,6 +250,8 @@ if (shoulddie == true && state_timer > 20){
     exit;
 }
 
+x = round(x);
+y = round(y);
 
 /*
 

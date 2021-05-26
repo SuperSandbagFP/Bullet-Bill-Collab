@@ -40,7 +40,7 @@ set_hitbox_value(AT_DAIR, 1, HG_BASE_KNOCKBACK, 5);
 set_hitbox_value(AT_DAIR, 1, HG_KNOCKBACK_SCALING, .7);
 set_hitbox_value(AT_DAIR, 1, HG_BASE_HITPAUSE, 10);
 set_hitbox_value(AT_DAIR, 1, HG_HITPAUSE_SCALING, .4);
-set_hitbox_value(AT_DAIR, 1, HG_HIT_SFX, sound_get("kick_smb3"));
+set_hitbox_value(AT_DAIR, 1, HG_HIT_SFX, sound_get("grab_smw"));
 
 set_hitbox_value(AT_DAIR, 2, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_DAIR, 2, HG_WINDOW, 3);
@@ -57,4 +57,4 @@ set_hitbox_value(AT_DAIR, 2, HG_BASE_KNOCKBACK, 5);
 set_hitbox_value(AT_DAIR, 2, HG_KNOCKBACK_SCALING, .7);
 set_hitbox_value(AT_DAIR, 2, HG_BASE_HITPAUSE, 10);
 set_hitbox_value(AT_DAIR, 2, HG_HITPAUSE_SCALING, .4);
-set_hitbox_value(AT_DAIR, 2, HG_HIT_SFX, sound_get("kick_smb3"));
+set_hitbox_value(AT_DAIR, 2, HG_HIT_SFX, sound_get("grab_smw"));

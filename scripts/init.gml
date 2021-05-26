@@ -17,19 +17,19 @@ knockback_adj       = 1;		// 0.9  -  1.2
 walk_speed          = 3.25;		// 3    -  4.5
 walk_accel          = 0.2;		// 0.2  -  0.5
 walk_turn_time      = 6;	    // 6
-initial_dash_time   = 14;		// 8    -  16
-initial_dash_speed  = 7;		// 4    -  9
-dash_speed          = 6.5;		// 5    -  9
+initial_dash_time   = 12;		// 8    -  16
+initial_dash_speed  = 6;		// 4    -  9
+dash_speed          = 6;		// 5    -  9
 dash_turn_time      = 10;		// 8    -  20
 dash_turn_accel     = 1.5;		// 0.1  -  2
-dash_stop_time      = 4;		// 4    -  6
+dash_stop_time      = 5;		// 4    -  6
 dash_stop_percent   = 0.35;		// 0.25 -  0.5
-ground_friction     = 0.5;		// 0.3  -  1
+ground_friction     = 0.4;		// 0.3  -  1
 moonwalk_accel      = 1.3;		// 1.2  -  1.4
     
 // Air movement
 leave_ground_max    = 6;		// 4    -  8
-max_jump_hsp        = 6;		// 4    -  8
+max_jump_hsp        = 5;		// 4    -  8
 air_max_speed       = 4;  		// 3    -  7
 jump_change         = 3;		// 3
 air_accel           = 0.3;		// 0.2  -  0.4
@@ -42,8 +42,8 @@ hitstun_grav        = 0.5;		// 0.45 -  0.53
 
 // Jumps
 jump_start_time     = 5;		// 5                this stat is automatically decreased by 1 after init.gml (dan moment), so its "real value" is 4. if you change this during a match, 4 is the value you should reset it to
-jump_speed          = 11;		// 7.6  -  12       okay, zetter's is actually 10.99 but... come on
-short_hop_speed     = 6;		// 4    -  7.4
+jump_speed          = 10.5;		// 7.6  -  12       okay, zetter's is actually 10.99 but... come on
+short_hop_speed     = 5.5;		// 4    -  7.4
 djump_speed         = 10;		// 6    -  12       absa's is -1 because of her floaty djump
 djump_accel         = 0;        // -1.4 -  0        absa's is -1.4, all other chars are 0. only works if the   djump_accel_end_time   variable is also set. floaty djumps should be adjusted by feel based on your char's gravity
 djump_accel_end_time= 0;        //                  the amount of time that   djump_accel   is applied for

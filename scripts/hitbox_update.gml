@@ -23,7 +23,7 @@ if (attack == AT_DSPECIAL){
 	}
 
 	if ((x > player_id.blaster.x-60 && x < player_id.blaster.x+60)  
-	&& (y > player_id.blaster.y-30 && y < player_id.blaster.y+110)){
+	&& (y > player_id.blaster.y-30 && y < player_id.blaster.y+30)){
     
     
     if (player_id.blaster_mini < 5 && hbox_num < 8 && hitbox_timer > 10){

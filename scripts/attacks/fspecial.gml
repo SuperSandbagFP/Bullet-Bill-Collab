@@ -29,7 +29,7 @@ set_window_value(AT_FSPECIAL, 3, AG_WINDOW_HSPEED_TYPE, 1);
 set_window_value(AT_FSPECIAL, 3, AG_WINDOW_VSPEED, 0);
 set_window_value(AT_FSPECIAL, 3, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_FSPECIAL, 3, AG_WINDOW_HAS_SFX, 1);
-set_window_value(AT_FSPECIAL, 3, AG_WINDOW_SFX, sound_get("grab_smw"));
+set_window_value(AT_FSPECIAL, 3, AG_WINDOW_SFX, asset_get("sfx_clairen_nspecial_grab_success"));
 set_window_value(AT_FSPECIAL, 3, AG_WINDOW_SFX_FRAME, 2);
 
 set_window_value(AT_FSPECIAL, 4, AG_WINDOW_TYPE, 9);
@@ -117,7 +117,7 @@ set_hitbox_value(AT_FSPECIAL, 2, HG_BASE_KNOCKBACK, 7);
 set_hitbox_value(AT_FSPECIAL, 2, HG_KNOCKBACK_SCALING, .2);
 set_hitbox_value(AT_FSPECIAL, 2, HG_BASE_HITPAUSE, 8);
 set_hitbox_value(AT_FSPECIAL, 2, HG_HITPAUSE_SCALING, .4);
-set_hitbox_value(AT_FSPECIAL, 2, HG_HIT_SFX, asset_get("sfx_blow_medium1"));
+set_hitbox_value(AT_FSPECIAL, 2, HG_HIT_SFX, sound_get("hitfxslam_smw"));
 
 set_hitbox_value(AT_FSPECIAL, 3, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_FSPECIAL, 3, HG_WINDOW, 6);
@@ -134,7 +134,7 @@ set_hitbox_value(AT_FSPECIAL, 3, HG_BASE_KNOCKBACK, 7);
 set_hitbox_value(AT_FSPECIAL, 3, HG_KNOCKBACK_SCALING, .2);
 set_hitbox_value(AT_FSPECIAL, 3, HG_BASE_HITPAUSE, 8);
 set_hitbox_value(AT_FSPECIAL, 3, HG_HITPAUSE_SCALING, .4);
-set_hitbox_value(AT_FSPECIAL, 3, HG_HIT_SFX, asset_get("sfx_blow_medium2"));
+set_hitbox_value(AT_FSPECIAL, 3, HG_HIT_SFX, sound_get("hitfxslam_smw"));
 
 set_hitbox_value(AT_FSPECIAL, 4, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_FSPECIAL, 4, HG_WINDOW, 7);
@@ -151,7 +151,7 @@ set_hitbox_value(AT_FSPECIAL, 4, HG_BASE_KNOCKBACK, 5);
 set_hitbox_value(AT_FSPECIAL, 4, HG_KNOCKBACK_SCALING, .2);
 set_hitbox_value(AT_FSPECIAL, 4, HG_BASE_HITPAUSE, 8);
 set_hitbox_value(AT_FSPECIAL, 4, HG_HITPAUSE_SCALING, .4);
-set_hitbox_value(AT_FSPECIAL, 4, HG_HIT_SFX, asset_get("sfx_blow_medium2"));
+set_hitbox_value(AT_FSPECIAL, 4, HG_HIT_SFX, sound_get("hitfxslam_smw"));
 
 set_hitbox_value(AT_FSPECIAL, 5, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_FSPECIAL, 5, HG_WINDOW, 2);

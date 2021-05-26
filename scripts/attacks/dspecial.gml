@@ -21,7 +21,7 @@ set_window_value(AT_DSPECIAL, 3, AG_WINDOW_LENGTH, 12);
 set_window_value(AT_DSPECIAL, 3, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_DSPECIAL, 3, AG_WINDOW_ANIM_FRAME_START, 8);
 set_window_value(AT_DSPECIAL, 3, AG_WINDOW_HAS_SFX, 1);
-set_window_value(AT_DSPECIAL, 3, AG_WINDOW_SFX, sound_get("minibillshoot_smw"));
+set_window_value(AT_DSPECIAL, 3, AG_WINDOW_SFX, asset_get("sfx_ell_strong_attack_explosion"));
 set_window_value(AT_DSPECIAL, 3, AG_WINDOW_SFX_FRAME, 1);
 set_window_value(AT_DSPECIAL, 3, AG_WINDOW_HSPEED, -4);
 set_window_value(AT_DSPECIAL, 3, AG_WINDOW_HSPEED_TYPE, 1);

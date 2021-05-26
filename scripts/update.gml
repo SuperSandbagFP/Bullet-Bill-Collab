@@ -24,6 +24,7 @@ if (kamikaze > 0 && !hitpause){
     kamikaze++;
     spr_dir = kamikaze_dir;
     if (kamikaze == 2){
+    	
     	sound_play(sound_get("blaster_smb3"));
     }
     if (kamikaze > 2){

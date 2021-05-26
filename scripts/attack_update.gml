@@ -86,7 +86,9 @@ if (attack == AT_NSPECIAL_AIR){
             }
             
             else {
+                spawn_hit_fx( blaster.x, blaster.y, 306 );
                 sound_play(sound_get("blaster_smb3"));
+                sound_play(asset_get("mfx_player_found"));
                 take_damage(player, -1, 10);
                 blaster_dir = spr_dir;
                 destroy_hitboxes();
@@ -524,7 +526,7 @@ if (attack == AT_FSTRONG){
         spawn_hit_fx( blaster.x+30*spr_dir, blaster.y-45, blaster_smoke_1);
         create_hitbox(AT_FSTRONG, 2, blaster.x+50*spr_dir, blaster.y-10);
         strong_direction = 0;
-        sound_play(asset_get("sfx_ell_strong_attack_explosion"));
+        sound_play(sound_get("minibillshoot_smw"));
         blaster_dir = spr_dir;
         
         //Tells the game to spawn the mini bills forward
@@ -548,7 +550,7 @@ if (attack == AT_USTRONG){
         spawn_hit_fx( blaster.x-35*spr_dir, blaster.y-105, blaster_smoke_2);
         create_hitbox(AT_USTRONG, 2, blaster.x, blaster.y-40);
         strong_direction = 1;
-        sound_play(asset_get("sfx_ell_strong_attack_explosion"));
+        sound_play(sound_get("minibillshoot_smw"));
         blaster_dir = spr_dir;
         
         //Tells the game to spawn the mini bills upward
@@ -574,7 +576,7 @@ if (attack == AT_DSTRONG){
         create_hitbox(AT_DSTRONG, 2, blaster.x+40*spr_dir, blaster.y+30);
         strong_direction = 2;
         blaster_dir = spr_dir;
-        sound_play(asset_get("sfx_ell_strong_attack_explosion"));
+        sound_play(sound_get("minibillshoot_smw"));
         
         //Tells the game to spawn the mini bills diagonally down
         if (blaster_mini != 0 && blaster_out == true){
