@@ -8,7 +8,7 @@ set_attack_value(AT_BAIR, AG_HURTBOX_SPRITE, sprite_get("bair_hurt"));
 set_window_value(AT_BAIR, 1, AG_WINDOW_LENGTH, 10);
 set_window_value(AT_BAIR, 1, AG_WINDOW_ANIM_FRAMES, 3);
 set_window_value(AT_BAIR, 1, AG_WINDOW_HAS_SFX, 1);
-set_window_value(AT_BAIR, 1, AG_WINDOW_SFX, asset_get("sfx_ell_strong_attack_explosion"));
+set_window_value(AT_BAIR, 1, AG_WINDOW_SFX, sound_get("bairairship_smb3"));
 set_window_value(AT_BAIR, 1, AG_WINDOW_SFX_FRAME, 5);
 
 set_window_value(AT_BAIR, 2, AG_WINDOW_LENGTH, 9);
@@ -38,7 +38,8 @@ set_hitbox_value(AT_BAIR, 1, HG_BASE_KNOCKBACK, 9);
 set_hitbox_value(AT_BAIR, 1, HG_KNOCKBACK_SCALING, .8);
 set_hitbox_value(AT_BAIR, 1, HG_BASE_HITPAUSE, 8);
 set_hitbox_value(AT_BAIR, 1, HG_HITPAUSE_SCALING, .4);
-set_hitbox_value(AT_BAIR, 1, HG_HIT_SFX, asset_get("sfx_zetter_fireball_fire"));
+set_hitbox_value(AT_BAIR, 1, HG_VISUAL_EFFECT, 4);
+set_hitbox_value(AT_BAIR, 1, HG_HIT_SFX, sound_get("firehit_smw"));
 
 set_hitbox_value(AT_BAIR, 2, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_BAIR, 2, HG_WINDOW, 2);
@@ -54,4 +55,11 @@ set_hitbox_value(AT_BAIR, 2, HG_BASE_KNOCKBACK, 7);
 set_hitbox_value(AT_BAIR, 2, HG_KNOCKBACK_SCALING, .7);
 set_hitbox_value(AT_BAIR, 2, HG_BASE_HITPAUSE, 6);
 set_hitbox_value(AT_BAIR, 2, HG_HITPAUSE_SCALING, .4);
-set_hitbox_value(AT_BAIR, 2, HG_HIT_SFX, asset_get("sfx_blow_medium2"));
+set_hitbox_value(AT_BAIR, 2, HG_HIT_SFX, sound_get("hitfxslam_smw"));
+
+/*
+sound_get("hitfxblock_smb3"));
+sound_get("hitfxbump_smb3"));
+sound_get("hitfxslam_smw"));
+sound_get("kick_smb3"));
+sound_get("kick_smw"));

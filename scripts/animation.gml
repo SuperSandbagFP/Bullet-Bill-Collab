@@ -17,7 +17,7 @@ if (state == PS_SPAWN) {
 
 if(get_gameplay_time() == 105){
 		spawn_hit_fx( blaster.x+30*spr_dir, blaster.y-45, blaster_smoke_1);
-		sound_play(asset_get("sfx_ell_strong_attack_explosion"));
+		sound_play(sound_get("blaster_smb3"));
 		spawn_hit_fx( x, y, blaster_intro);
 	}
     

@@ -29,7 +29,7 @@ set_window_value(AT_FSPECIAL, 3, AG_WINDOW_HSPEED_TYPE, 1);
 set_window_value(AT_FSPECIAL, 3, AG_WINDOW_VSPEED, 0);
 set_window_value(AT_FSPECIAL, 3, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_FSPECIAL, 3, AG_WINDOW_HAS_SFX, 1);
-set_window_value(AT_FSPECIAL, 3, AG_WINDOW_SFX, asset_get("sfx_clairen_nspecial_grab_success"));
+set_window_value(AT_FSPECIAL, 3, AG_WINDOW_SFX, sound_get("grab_smw"));
 set_window_value(AT_FSPECIAL, 3, AG_WINDOW_SFX_FRAME, 2);
 
 set_window_value(AT_FSPECIAL, 4, AG_WINDOW_TYPE, 9);

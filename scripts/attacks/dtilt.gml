@@ -33,7 +33,7 @@ set_hitbox_value(AT_DTILT, 1, HG_BASE_KNOCKBACK, 5);
 set_hitbox_value(AT_DTILT, 1, HG_KNOCKBACK_SCALING, .6);
 set_hitbox_value(AT_DTILT, 1, HG_BASE_HITPAUSE, 5);
 set_hitbox_value(AT_DTILT, 1, HG_HITPAUSE_SCALING, .35);
-set_hitbox_value(AT_DTILT, 1, HG_HIT_SFX, asset_get("sfx_blow_medium2"));
+set_hitbox_value(AT_DTILT, 1, HG_HIT_SFX, sound_get("kick_smw"));
 
 set_hitbox_value(AT_DTILT, 2, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_DTILT, 2, HG_WINDOW, 3);
@@ -49,4 +49,4 @@ set_hitbox_value(AT_DTILT, 2, HG_BASE_KNOCKBACK, 7);
 set_hitbox_value(AT_DTILT, 2, HG_KNOCKBACK_SCALING, .1);
 set_hitbox_value(AT_DTILT, 2, HG_BASE_HITPAUSE, 3);
 set_hitbox_value(AT_DTILT, 2, HG_HITPAUSE_SCALING, .2);
-set_hitbox_value(AT_DTILT, 2, HG_HIT_SFX, asset_get("sfx_blow_weak2"));
+set_hitbox_value(AT_DTILT, 2, HG_HIT_SFX, sound_get("kick_smb3"));

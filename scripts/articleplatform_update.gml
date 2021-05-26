@@ -48,7 +48,7 @@ if (attack == AT_FSPECIAL && (place_meeting(x,y,other.id) && other.player_id = p
 	
 	//Getting Grabbed, only happens if haven't grabbed a player
 	if (hbox_num == 1 && player_id.torpedo_blaster == false && player_id.hitpause == false){
-		sound_play(asset_get("sfx_clairen_nspecial_grab_success"));
+		sound_play(sound_get("grab_smw"));
 		player_id.torpedo_blaster = true;
 		other.spr_dir = player_id.spr_dir;
 	}
@@ -236,6 +236,11 @@ if (stage_y + stage_b < y){
 }
 
 //Dying of course
+if (shoulddie == true && state_timer == 18){
+	spawn_hit_fx( x, y, blaster_smoke_big );
+	sound_play(sound_get("blasterdeath_smw"));
+}
+
 if (shoulddie == true && state_timer > 20){
 	player_id.killarticles = false;
 	player_id.blaster_out = false;

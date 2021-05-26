@@ -103,8 +103,7 @@ set_window_value(AT_STRONG, 12, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 12, AG_WINDOW_ANIM_FRAME_START, 2);
 set_window_value(AT_STRONG, 12, AG_WINDOW_GOTO, 2);
 set_window_value(AT_STRONG, 12, AG_WINDOW_HAS_SFX, 1);
-set_window_value(AT_STRONG, 12, AG_WINDOW_SFX, asset_get("sfx_ell_fist_fire"));
-set_window_value(AT_STRONG, 12, AG_WINDOW_SFX_FRAME, 2);
+set_window_value(AT_STRONG, 12, AG_WINDOW_SFX, sound_get("blaster_smb3"));
 
 
 set_num_hitboxes(AT_STRONG, 5);
@@ -125,7 +124,7 @@ set_hitbox_value(AT_STRONG, 1, HG_KNOCKBACK_SCALING, .9);
 set_hitbox_value(AT_STRONG, 1, HG_BASE_HITPAUSE, 10);
 set_hitbox_value(AT_STRONG, 1, HG_HITPAUSE_SCALING, .7);
 set_hitbox_value(AT_STRONG, 1, HG_VISUAL_EFFECT, 304);
-set_hitbox_value(AT_STRONG, 1, HG_HIT_SFX, asset_get("sfx_blow_heavy1"));
+set_hitbox_value(AT_STRONG, 1, HG_HIT_SFX, sound_get("stronghit_smw"));
 set_hitbox_value(AT_STRONG, 1, HG_HIT_LOCKOUT, 3);
 
 set_hitbox_value(AT_STRONG, 2, HG_HITBOX_TYPE, 1);
@@ -144,7 +143,7 @@ set_hitbox_value(AT_STRONG, 2, HG_KNOCKBACK_SCALING, .9);
 set_hitbox_value(AT_STRONG, 2, HG_BASE_HITPAUSE, 10);
 set_hitbox_value(AT_STRONG, 2, HG_HITPAUSE_SCALING, .7);
 set_hitbox_value(AT_STRONG, 2, HG_VISUAL_EFFECT, 304);
-set_hitbox_value(AT_STRONG, 2, HG_HIT_SFX, asset_get("sfx_blow_heavy1"));
+set_hitbox_value(AT_STRONG, 2, HG_HIT_SFX, sound_get("stronghit_smw"));
 set_hitbox_value(AT_STRONG, 2, HG_HIT_LOCKOUT, 3);
 
 set_hitbox_value(AT_STRONG, 3, HG_HITBOX_TYPE, 1);
@@ -163,7 +162,7 @@ set_hitbox_value(AT_STRONG, 3, HG_KNOCKBACK_SCALING, .9);
 set_hitbox_value(AT_STRONG, 3, HG_BASE_HITPAUSE, 10);
 set_hitbox_value(AT_STRONG, 3, HG_HITPAUSE_SCALING, .7);
 set_hitbox_value(AT_STRONG, 3, HG_VISUAL_EFFECT, 304);
-set_hitbox_value(AT_STRONG, 3, HG_HIT_SFX, asset_get("sfx_blow_heavy1"));
+set_hitbox_value(AT_STRONG, 3, HG_HIT_SFX, sound_get("stronghit_smw"));
 set_hitbox_value(AT_STRONG, 3, HG_HIT_LOCKOUT, 3);
 
 set_hitbox_value(AT_STRONG, 4, HG_HITBOX_TYPE, 1);
@@ -182,7 +181,7 @@ set_hitbox_value(AT_STRONG, 4, HG_KNOCKBACK_SCALING, .9);
 set_hitbox_value(AT_STRONG, 4, HG_BASE_HITPAUSE, 10);
 set_hitbox_value(AT_STRONG, 4, HG_HITPAUSE_SCALING, .7);
 set_hitbox_value(AT_STRONG, 4, HG_VISUAL_EFFECT, 304);
-set_hitbox_value(AT_STRONG, 4, HG_HIT_SFX, asset_get("sfx_blow_heavy1"));
+set_hitbox_value(AT_STRONG, 4, HG_HIT_SFX, sound_get("stronghit_smw"));
 set_hitbox_value(AT_STRONG, 4, HG_HIT_LOCKOUT, 3);
 
 set_hitbox_value(AT_STRONG, 5, HG_HITBOX_TYPE, 1);
@@ -201,5 +200,5 @@ set_hitbox_value(AT_STRONG, 5, HG_KNOCKBACK_SCALING, .9);
 set_hitbox_value(AT_STRONG, 5, HG_BASE_HITPAUSE, 10);
 set_hitbox_value(AT_STRONG, 5, HG_HITPAUSE_SCALING, .7);
 set_hitbox_value(AT_STRONG, 5, HG_VISUAL_EFFECT, 304);
-set_hitbox_value(AT_STRONG, 5, HG_HIT_SFX, asset_get("sfx_blow_heavy1"));
+set_hitbox_value(AT_STRONG, 5, HG_HIT_SFX, sound_get("stronghit_smw"));
 set_hitbox_value(AT_STRONG, 5, HG_HIT_LOCKOUT, 3);

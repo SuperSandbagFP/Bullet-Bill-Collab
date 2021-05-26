@@ -7,7 +7,7 @@ set_window_value(AT_FTILT, 1, AG_WINDOW_ANIM_FRAMES, 4);
 set_window_value(AT_FTILT, 1, AG_WINDOW_HSPEED, 8);
 set_window_value(AT_FTILT, 1, AG_WINDOW_HSPEED_TYPE, 2);
 set_window_value(AT_FTILT, 1, AG_WINDOW_HAS_SFX, 1);
-set_window_value(AT_FTILT, 1, AG_WINDOW_SFX, asset_get("sfx_orca_bite"));
+set_window_value(AT_FTILT, 1, AG_WINDOW_SFX, sound_get("ftiltbite_yi"));
 set_window_value(AT_FTILT, 1, AG_WINDOW_SFX_FRAME, 6);
 
 set_window_value(AT_FTILT, 2, AG_WINDOW_LENGTH, 4);

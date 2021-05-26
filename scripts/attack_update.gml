@@ -9,11 +9,11 @@ if (attack == AT_NSPECIAL){
     if (window == 3 && window_timer == 4 && blaster_out == true){
             spawn_hit_fx( blaster.x, blaster.y, blaster_smoke_big );
             blaster.shoulddie = true;
-            sound_play(asset_get("sfx_ell_uspecial_explode"));
+            sound_play(sound_get("blasterdeath_smw"));
         }
     //Builds the Blaster
     if (window == 3 && window_timer == 8){
-        sound_play(asset_get("sfx_ell_uspecial_rebuild"));
+        sound_play(sound_get("blasterbuild_smw"));
         blaster = instance_create(x, y-48, "obj_article_platform");
         spawn_hit_fx( blaster.x, blaster.y, blaster_smoke_big );
         blaster_out = true;
@@ -86,13 +86,14 @@ if (attack == AT_NSPECIAL_AIR){
             }
             
             else {
+                sound_play(sound_get("blaster_smb3"));
                 take_damage(player, -1, 10);
                 blaster_dir = spr_dir;
                 destroy_hitboxes();
                 kamikaze = 1;
                 visible = false;
                 invincible = true;
-                sound_play(asset_get("sfx_death1"));
+                sound_play(sound_get("kamikazehit_smw"));
                 window = 12;
                 window_timer = 1;
                 if (kamikaze_strong == 2){
@@ -169,7 +170,7 @@ if (attack == AT_NSPECIAL_AIR){
     }
     
     if (state_timer == 45){
-        sound_play(asset_get("sfx_ell_overheat"));
+        sound_play(sound_get("kamikazemiss_smw"));
         take_damage(player, -1, 5);
         window += 1;
         window_timer = 1;
@@ -580,6 +581,10 @@ if (attack == AT_DSTRONG){
             blaster_mini_shoot = 2;
         }
     }
+}
+
+if (attack == AT_TAUNT && taunt_down && window == 2){
+    window_timer = 3;
 }
 
 

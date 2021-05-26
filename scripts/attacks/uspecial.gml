@@ -10,7 +10,7 @@ set_attack_value(AT_USPECIAL, AG_HURTBOX_AIR_SPRITE, sprite_get("uspecial_air_hu
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_LENGTH, 11);
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_ANIM_FRAMES, 7);
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_HAS_SFX, 1);
-set_window_value(AT_USPECIAL, 1, AG_WINDOW_SFX, asset_get("sfx_spin"));
+set_window_value(AT_USPECIAL, 1, AG_WINDOW_SFX, sound_get("tail_smb3"));
 set_window_value(AT_USPECIAL, 1, AG_WINDOW_SFX_FRAME, 7);
 
 set_window_value(AT_USPECIAL, 2, AG_WINDOW_LENGTH, 6);
