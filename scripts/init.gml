@@ -156,8 +156,8 @@ set_victory_theme(sound_get("victory_bill")); // victory_theme.ogg
 land_sound          = asset_get("sfx_land_light");
 landing_lag_sound   = asset_get("sfx_land_med");
 waveland_sound      = asset_get("sfx_waveland_ran"); // recommended to try out all 14 base cast wavedash sfx (see sfx page in roa manual)
-jump_sound          = asset_get("sfx_jumpground");
-djump_sound         = asset_get("sfx_jumpair");
+jump_sound          = sound_get("jump_yi");
+djump_sound         = sound_get("jump2_yi");
 air_dodge_sound     = asset_get("sfx_quick_dodge");
 
 // Visual offsets for when you're in Ranno's bubble
