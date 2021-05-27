@@ -410,7 +410,7 @@ if (attack == AT_STRONG){
         blaster_dir = spr_dir;
         blaster_strong_draw = false;
         //Setting up each of the directions
-        if (window == 1){ //&& window_timer == 1
+        if (window_timer == 1 && window == 1){
             if (right_strong_pressed || left_strong_pressed){
                 set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAME_START, 0);
                 set_window_value(AT_STRONG, 12, AG_WINDOW_GOTO, 2);
