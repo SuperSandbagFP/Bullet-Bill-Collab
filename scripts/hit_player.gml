@@ -9,9 +9,8 @@ if (my_hitboxID.attack == AT_NSPECIAL_AIR){
             create_deathbox( x, y, 2, 2, player, true, 0, 2, 2); 
         }
         else {
-        	if (!hitpause){
-        		sound_play(sound_get("kamihit_yi"));	
-        	}
+        			
+
         	spawn_hit_fx( blaster.x, blaster.y, 306 );
         	kamikaze_dir = spr_dir;
         	take_damage(player, -1, 5);
@@ -22,7 +21,7 @@ if (my_hitboxID.attack == AT_NSPECIAL_AIR){
         	window = 12;
         	window_timer = 1;
         	kamikaze = 1;
-        	
+        	sound_play(sound_get("kamihit_yi"));
         	
         	if (my_hitboxID.hbox_num == 1 || my_hitboxID.hbox_num == 2){
         		blaster_dir = spr_dir;
