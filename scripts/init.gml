@@ -205,6 +205,9 @@ blaster_smoke_4 = hit_fx_create( sprite_get( "smoke_small_up2" ), 13 );
 blaster_smoke_5 = hit_fx_create( sprite_get( "smoke_small_down2" ), 13 );
 
 blaster_smoke_big = hit_fx_create( sprite_get( "smoke_big" ), 20 );
+blaster_smoke_mid = hit_fx_create( sprite_get( "smoke_mid" ), 20 );
+blaster_smoke_tiny = hit_fx_create( sprite_get( "smoke_tiny" ), 20 );
+smoke_mid = noone;
 
 blaster_intro = hit_fx_create( sprite_get( "intro" ), 14 );
 

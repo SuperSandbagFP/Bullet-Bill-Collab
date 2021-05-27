@@ -88,7 +88,7 @@ if (attack == AT_NSPECIAL_AIR){
             else {
                 spawn_hit_fx( blaster.x, blaster.y, 306 );
                 sound_play(sound_get("blaster_smb3"));
-                sound_play(asset_get("mfx_player_found"));
+                sound_play(sound_get("kamihit_yi"));
                 take_damage(player, -1, 10);
                 blaster_dir = spr_dir;
                 destroy_hitboxes();
@@ -172,10 +172,19 @@ if (attack == AT_NSPECIAL_AIR){
     }
     
     if (state_timer == 45){
+        move_cooldown[AT_NSPECIAL_AIR] = 999;
+        
         sound_play(sound_get("kamikazemiss_smw"));
         take_damage(player, -1, 5);
         window += 1;
         window_timer = 1;
+    }
+    if (state_timer == 48){
+       smoke_mid = spawn_hit_fx( x, y, blaster_smoke_mid ); 
+    }
+    if (state_timer >= 48){
+        smoke_mid.x = x;
+        smoke_mid.y = y;
     }
     
     

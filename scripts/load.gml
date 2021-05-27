@@ -65,3 +65,5 @@ sprite_change_offset("sniper_bullet", 14, 18);
 sprite_change_offset("sniper_bullet_strong", 14, 18);
 
 sprite_change_offset("smoke_big", 83, 89);
+sprite_change_offset("smoke_mid", 44, 90);
+sprite_change_offset("smoke_tiny", 19, 46);

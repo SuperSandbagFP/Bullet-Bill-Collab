@@ -1,6 +1,6 @@
 //B - Reversals
 if (!free || state == PS_WALL_JUMP){
-    move_cooldown[AT_NSPECIAL_AIR] = 0;
+	move_cooldown[AT_NSPECIAL_AIR] = 0;
 }
 
 //Spawn Hologram at the start
@@ -23,7 +23,7 @@ if (state == PS_ATTACK_GROUND && attack == AT_STRONG && window == 1 && window_ti
 if (kamikaze > 0 && !hitpause){
     kamikaze++;
     spr_dir = kamikaze_dir;
-    if (kamikaze == 2){
+    if (kamikaze == 2 && !hitpause){
     	
     	sound_play(sound_get("blaster_smb3"));
     }
@@ -187,6 +187,7 @@ if (torpedo_grab == true){
 if (blaster_mini_shoot == 1){
 	if (blaster_mini == round(blaster_mini) && blaster_mini > 0){
 		create_hitbox(AT_DSPECIAL, 8, blaster.x, blaster.y);
+		sound_play(sound_get("minibillshoot_smw"));
 	}
 	if (blaster_mini > .9){
 		blaster_mini -= .1;	
@@ -198,6 +199,7 @@ if (blaster_mini_shoot == 1){
 
 if (blaster_mini_shoot == 2){
 	if (blaster_mini == round(blaster_mini) && blaster_mini > 0){
+		sound_play(sound_get("minibillshoot_smw"));
 		create_hitbox(AT_DSPECIAL, 9, blaster.x, blaster.y);
 	}
 	if (blaster_mini > 0){
@@ -210,6 +212,7 @@ if (blaster_mini_shoot == 2){
 
 if (blaster_mini_shoot == 3){
 	if (blaster_mini == round(blaster_mini) && blaster_mini > 0){
+		sound_play(sound_get("minibillshoot_smw"));
 		create_hitbox(AT_DSPECIAL, 10, blaster.x, blaster.y);
 	}
 	if (blaster_mini > 0){
@@ -224,6 +227,10 @@ if (blaster_mini_shoot != 0){
 	move_cooldown[AT_FSTRONG] = 5;
 	move_cooldown[AT_USTRONG] = 5;
 	move_cooldown[AT_DSTRONG] = 5;
+}
+
+if (blaster_mini == .9){
+	blaster_mini = 0;
 }
 
 if ((x > blaster.x-60 && x < blaster.x+60) && (y > blaster.y-10 && y < blaster.y+110) && blaster_out == true){
