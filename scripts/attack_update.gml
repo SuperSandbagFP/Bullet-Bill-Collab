@@ -144,7 +144,7 @@ if (attack == AT_NSPECIAL_AIR){
                 vsp = 4;    
             break
         }
-        if (state_timer == 16){
+        if (state_timer == 16 && !hitpause){
             sound_play(asset_get("sfx_ell_big_missile_fire"));
         }
         
@@ -526,6 +526,7 @@ if (attack == AT_FSTRONG){
     
     //Resets the variables
     if (window == 1 && window_timer == 1){
+        blaster_dir = spr_dir;
         blaster_anim = 1;
         blaster_anim_frame = 0;
     }
@@ -550,6 +551,7 @@ if (attack == AT_USTRONG){
     
     //Resets the variables
     if (window == 1 && window_timer == 1){
+        blaster_dir = spr_dir;
         blaster_anim = 2;
         blaster_anim_frame = 0;
     }

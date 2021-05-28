@@ -5,7 +5,7 @@ if (attack == AT_DSPECIAL){
 		proj_angle = player_id.scope_aim;	
 	}
 	
-	if (hbox_num == 8){
+	if (hbox_num == 8 && hitbox_timer < 3){
 		proj_angle = 0;
 		spr_dir = player_id.blaster_dir;
 		hsp = 9*player_id.blaster_dir;
@@ -16,7 +16,7 @@ if (attack == AT_DSPECIAL){
 		spr_dir = player_id.blaster_dir;
 	}
 	
-	if (hbox_num == 9){
+	if (hbox_num == 9 && hitbox_timer < 3){
 		proj_angle = -45*spr_dir;	
 		spr_dir = player_id.blaster_dir;
 		hsp = 6*player_id.blaster_dir;
@@ -47,4 +47,6 @@ if (attack == AT_DSPECIAL){
     }
     	
 	}
+
+	
 }

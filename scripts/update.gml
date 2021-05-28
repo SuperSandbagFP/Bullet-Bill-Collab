@@ -70,6 +70,13 @@ if (kamikaze > 0 && !hitpause){
     }
 }
 
+if (blaster_out == true){
+	if (blaster.state_timer == 18 && blaster.shoulddie == true){
+		spawn_hit_fx( blaster.x, blaster.y, blaster_smoke_big );
+		sound_play(sound_get("blasterdeath_smw"));
+	}
+}
+
 if (blaster_anim != 0 && blaster_anim_frame >= 0 && kamikaze > 0){
 	blaster_anim_frame += .25;
 	destroy_hitboxes();
