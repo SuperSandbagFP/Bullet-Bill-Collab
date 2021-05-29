@@ -6,6 +6,7 @@ set_attack_value(AT_STRONG, AG_STRONG_CHARGE_WINDOW, 1);
 set_attack_value(AT_STRONG, AG_OFF_LEDGE, 1);
 set_attack_value(AT_STRONG, AG_HURTBOX_SPRITE, sprite_get("strong_hurt"));
 
+//Startup
 set_window_value(AT_STRONG, 1, AG_WINDOW_LENGTH, 15);
 set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 1, AG_WINDOW_ANIM_FRAME_START, 0);
@@ -13,6 +14,7 @@ set_window_value(AT_STRONG, 1, AG_WINDOW_HAS_SFX, 1);
 set_window_value(AT_STRONG, 1, AG_WINDOW_SFX, asset_get("sfx_swipe_heavy1"));
 set_window_value(AT_STRONG, 1, AG_WINDOW_GOTO, 12);
 
+//Travelling forward
 set_window_value(AT_STRONG, 2, AG_WINDOW_LENGTH, 9);
 set_window_value(AT_STRONG, 2, AG_WINDOW_ANIM_FRAMES, 3);
 set_window_value(AT_STRONG, 2, AG_WINDOW_ANIM_FRAME_START, 0);
@@ -21,6 +23,7 @@ set_window_value(AT_STRONG, 2, AG_WINDOW_HSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 2, AG_WINDOW_VSPEED, 0);
 set_window_value(AT_STRONG, 2, AG_WINDOW_VSPEED_TYPE, 1);
 
+//Travelling forward endlag
 set_window_value(AT_STRONG, 3, AG_WINDOW_LENGTH, 4);
 set_window_value(AT_STRONG, 3, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 3, AG_WINDOW_ANIM_FRAME_START, 15);
@@ -30,6 +33,7 @@ set_window_value(AT_STRONG, 3, AG_WINDOW_VSPEED, 0);
 set_window_value(AT_STRONG, 3, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 3, AG_WINDOW_GOTO, 13);
 
+//Travelling diagonally up
 set_window_value(AT_STRONG, 4, AG_WINDOW_LENGTH, 9);
 set_window_value(AT_STRONG, 4, AG_WINDOW_ANIM_FRAMES, 3);
 set_window_value(AT_STRONG, 4, AG_WINDOW_ANIM_FRAME_START, 3);
@@ -38,6 +42,7 @@ set_window_value(AT_STRONG, 4, AG_WINDOW_HSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 4, AG_WINDOW_VSPEED, -6);
 set_window_value(AT_STRONG, 4, AG_WINDOW_VSPEED_TYPE, 1);
 
+//Travelling diagonally up endlag
 set_window_value(AT_STRONG, 5, AG_WINDOW_LENGTH, 4);
 set_window_value(AT_STRONG, 5, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 5, AG_WINDOW_ANIM_FRAME_START, 17);
@@ -47,6 +52,7 @@ set_window_value(AT_STRONG, 5, AG_WINDOW_VSPEED, -6);
 set_window_value(AT_STRONG, 5, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 5, AG_WINDOW_GOTO, 13);
 
+//Travelling up
 set_window_value(AT_STRONG, 6, AG_WINDOW_LENGTH, 9);
 set_window_value(AT_STRONG, 6, AG_WINDOW_ANIM_FRAMES, 3);
 set_window_value(AT_STRONG, 6, AG_WINDOW_ANIM_FRAME_START, 6);
@@ -55,6 +61,7 @@ set_window_value(AT_STRONG, 6, AG_WINDOW_HSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 6, AG_WINDOW_VSPEED, -9);
 set_window_value(AT_STRONG, 6, AG_WINDOW_VSPEED_TYPE, 1);
 
+//Travelling up endlag
 set_window_value(AT_STRONG, 7, AG_WINDOW_LENGTH, 4);
 set_window_value(AT_STRONG, 7, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 7, AG_WINDOW_ANIM_FRAME_START, 19);
@@ -64,6 +71,7 @@ set_window_value(AT_STRONG, 7, AG_WINDOW_VSPEED, -9);
 set_window_value(AT_STRONG, 7, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 7, AG_WINDOW_GOTO, 13);
 
+//Travelling down
 set_window_value(AT_STRONG, 8, AG_WINDOW_LENGTH, 9);
 set_window_value(AT_STRONG, 8, AG_WINDOW_ANIM_FRAMES, 3);
 set_window_value(AT_STRONG, 8, AG_WINDOW_ANIM_FRAME_START, 9);
@@ -72,6 +80,7 @@ set_window_value(AT_STRONG, 8, AG_WINDOW_HSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 8, AG_WINDOW_VSPEED, 9);
 set_window_value(AT_STRONG, 8, AG_WINDOW_VSPEED_TYPE, 1);
 
+//Travelling down endlag
 set_window_value(AT_STRONG, 9, AG_WINDOW_LENGTH, 4);
 set_window_value(AT_STRONG, 9, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 9, AG_WINDOW_ANIM_FRAME_START, 21);
@@ -81,6 +90,7 @@ set_window_value(AT_STRONG, 9, AG_WINDOW_VSPEED, 9);
 set_window_value(AT_STRONG, 9, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 9, AG_WINDOW_GOTO, 13);
 
+//Travelling diagonally down
 set_window_value(AT_STRONG, 10, AG_WINDOW_LENGTH, 9);
 set_window_value(AT_STRONG, 10, AG_WINDOW_ANIM_FRAMES, 3);
 set_window_value(AT_STRONG, 10, AG_WINDOW_ANIM_FRAME_START, 12);
@@ -89,6 +99,7 @@ set_window_value(AT_STRONG, 10, AG_WINDOW_HSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 10, AG_WINDOW_VSPEED, 6);
 set_window_value(AT_STRONG, 10, AG_WINDOW_VSPEED_TYPE, 1);
 
+//Travelling diagonally down endlag
 set_window_value(AT_STRONG, 11, AG_WINDOW_LENGTH, 4);
 set_window_value(AT_STRONG, 11, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 11, AG_WINDOW_ANIM_FRAME_START, 23);
@@ -98,6 +109,7 @@ set_window_value(AT_STRONG, 11, AG_WINDOW_VSPEED, 6);
 set_window_value(AT_STRONG, 11, AG_WINDOW_VSPEED_TYPE, 1);
 set_window_value(AT_STRONG, 11, AG_WINDOW_GOTO, 13);
 
+//Endlag
 set_window_value(AT_STRONG, 12, AG_WINDOW_LENGTH, 6);
 set_window_value(AT_STRONG, 12, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_STRONG, 12, AG_WINDOW_ANIM_FRAME_START, 2);
@@ -108,6 +120,7 @@ set_window_value(AT_STRONG, 12, AG_WINDOW_SFX, sound_get("blaster_smb3"));
 
 set_num_hitboxes(AT_STRONG, 5);
 
+//Hitbox forward
 set_hitbox_value(AT_STRONG, 1, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_STRONG, 1, HG_WINDOW, 2);
 set_hitbox_value(AT_STRONG, 1, HG_WINDOW_CREATION_FRAME, 1);
@@ -127,6 +140,7 @@ set_hitbox_value(AT_STRONG, 1, HG_VISUAL_EFFECT, 304);
 set_hitbox_value(AT_STRONG, 1, HG_HIT_SFX, sound_get("stronghit_smw"));
 set_hitbox_value(AT_STRONG, 1, HG_HIT_LOCKOUT, 3);
 
+//Hitbox diagonally up
 set_hitbox_value(AT_STRONG, 2, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_STRONG, 2, HG_WINDOW, 4);
 set_hitbox_value(AT_STRONG, 2, HG_WINDOW_CREATION_FRAME, 1);
@@ -146,6 +160,7 @@ set_hitbox_value(AT_STRONG, 2, HG_VISUAL_EFFECT, 304);
 set_hitbox_value(AT_STRONG, 2, HG_HIT_SFX, sound_get("stronghit_smw"));
 set_hitbox_value(AT_STRONG, 2, HG_HIT_LOCKOUT, 3);
 
+//Hitbox up
 set_hitbox_value(AT_STRONG, 3, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_STRONG, 3, HG_WINDOW, 6);
 set_hitbox_value(AT_STRONG, 3, HG_WINDOW_CREATION_FRAME, 1);
@@ -165,6 +180,7 @@ set_hitbox_value(AT_STRONG, 3, HG_VISUAL_EFFECT, 304);
 set_hitbox_value(AT_STRONG, 3, HG_HIT_SFX, sound_get("stronghit_smw"));
 set_hitbox_value(AT_STRONG, 3, HG_HIT_LOCKOUT, 3);
 
+//Hitbox down
 set_hitbox_value(AT_STRONG, 4, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_STRONG, 4, HG_WINDOW, 8);
 set_hitbox_value(AT_STRONG, 4, HG_WINDOW_CREATION_FRAME, 1);
@@ -184,6 +200,7 @@ set_hitbox_value(AT_STRONG, 4, HG_VISUAL_EFFECT, 304);
 set_hitbox_value(AT_STRONG, 4, HG_HIT_SFX, sound_get("stronghit_smw"));
 set_hitbox_value(AT_STRONG, 4, HG_HIT_LOCKOUT, 3);
 
+//Hitbox diagonally down
 set_hitbox_value(AT_STRONG, 5, HG_HITBOX_TYPE, 1);
 set_hitbox_value(AT_STRONG, 5, HG_WINDOW, 10);
 set_hitbox_value(AT_STRONG, 5, HG_WINDOW_CREATION_FRAME, 1);

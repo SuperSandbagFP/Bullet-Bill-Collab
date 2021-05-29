@@ -31,6 +31,7 @@ if (attack == AT_NSPECIAL_AIR){
     }
     //Startup before the movement happens
     if (window == 1 && window_timer == 15){
+        kamikaze_hitme = false;
         kamikaze_hit = false;
         has_hit = false;
         move_cooldown[AT_NSPECIAL_AIR] = 999;
@@ -171,6 +172,7 @@ if (attack == AT_NSPECIAL_AIR){
         }
     }
     
+    //Spawning the effets at the endlag
     if (state_timer == 45){
         move_cooldown[AT_NSPECIAL_AIR] = 999;
         
@@ -431,7 +433,7 @@ if (attack == AT_STRONG){
             }
         }
         
-        x = blaster.x;
+        x = blaster.x+blaster.drawx;
         y = blaster.y;
     }
     //Releases the charge
@@ -596,6 +598,7 @@ if (attack == AT_DSTRONG){
     }
 }
 
+//Taunt Loop
 if (attack == AT_TAUNT && taunt_down && window == 2){
     window_timer = 3;
 }

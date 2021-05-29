@@ -19,6 +19,7 @@ hitstop = 0;                                        //The frames remaining in hi
 hsp = 0;                                            //The horizontal speed of the article. Multiply by spr_dir to correctly handle forward (+) or backward (-) movement
 vsp = 0;                                            //The vertical speed of the article.
 
+drawx = 1;
 
 //Terrain behavior
 can_be_grounded = true;                            //Determines if the article follows platforms when free == false.

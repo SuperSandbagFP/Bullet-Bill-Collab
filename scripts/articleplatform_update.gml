@@ -21,7 +21,7 @@ else {
 	visible = true;
 }
 
-//platform
+//So it doesn't screw up in either ground types
 if (state == 0){
 if(!position_meeting(x, y+50, asset_get("par_block"))){
             y-=1;
@@ -38,6 +38,14 @@ else {
 	y = y;
 }
 
+}
+
+//Draws the Head always on the center
+if (spr_dir != player_id.blaster_dir){
+			drawx = -4*player_id.blaster_dir;
+}
+else {
+	drawx = 0;
 }
 
 

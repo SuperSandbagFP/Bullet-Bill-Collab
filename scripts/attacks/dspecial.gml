@@ -6,17 +6,20 @@ set_attack_value(AT_DSPECIAL, AG_OFF_LEDGE, 1);
 set_attack_value(AT_DSPECIAL, AG_AIR_SPRITE, sprite_get("dspecial"));
 set_attack_value(AT_DSPECIAL, AG_HURTBOX_SPRITE, sprite_get("dspecial_hurt"));
 
+//Startup
 set_window_value(AT_DSPECIAL, 1, AG_WINDOW_LENGTH, 23);
 set_window_value(AT_DSPECIAL, 1, AG_WINDOW_ANIM_FRAMES, 5);
 set_window_value(AT_DSPECIAL, 1, AG_WINDOW_HAS_SFX, 1);
 set_window_value(AT_DSPECIAL, 1, AG_WINDOW_SFX, sound_get("grab_smw"));
 set_window_value(AT_DSPECIAL, 1, AG_WINDOW_SFX_FRAME, 9);
 
+//Aiming
 set_window_value(AT_DSPECIAL, 2, AG_WINDOW_TYPE, 9);
 set_window_value(AT_DSPECIAL, 2, AG_WINDOW_LENGTH, 2);
 set_window_value(AT_DSPECIAL, 2, AG_WINDOW_ANIM_FRAMES, 1);
 set_window_value(AT_DSPECIAL, 2, AG_WINDOW_ANIM_FRAME_START, 5);
 
+//Shooting the Mini Bill
 set_window_value(AT_DSPECIAL, 3, AG_WINDOW_LENGTH, 12);
 set_window_value(AT_DSPECIAL, 3, AG_WINDOW_ANIM_FRAMES, 2);
 set_window_value(AT_DSPECIAL, 3, AG_WINDOW_ANIM_FRAME_START, 8);
@@ -28,6 +31,7 @@ set_window_value(AT_DSPECIAL, 3, AG_WINDOW_HSPEED_TYPE, 1);
 
 set_num_hitboxes(AT_DSPECIAL, 10);
 
+//Mini Bill Forward
 set_hitbox_value(AT_DSPECIAL, 1, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 1, HG_WINDOW, 3);
 set_hitbox_value(AT_DSPECIAL, 1, HG_WINDOW_CREATION_FRAME, 1);
@@ -56,6 +60,7 @@ set_hitbox_value(AT_DSPECIAL, 1, HG_PROJECTILE_IS_TRANSCENDENT, true);
 set_hitbox_value(AT_DSPECIAL, 1, HG_HIT_SFX, asset_get("sfx_abyss_hazard_hit"));
 set_hitbox_value(AT_DSPECIAL, 1, HG_PROJECTILE_DESTROY_EFFECT, blaster_smoke_tiny);
 
+//Mini Bill Diagonally Up 1
 set_hitbox_value(AT_DSPECIAL, 2, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 2, HG_WINDOW, 3);
 set_hitbox_value(AT_DSPECIAL, 2, HG_WINDOW_CREATION_FRAME, 1);
@@ -84,6 +89,7 @@ set_hitbox_value(AT_DSPECIAL, 2, HG_PROJECTILE_IS_TRANSCENDENT, true);
 set_hitbox_value(AT_DSPECIAL, 2, HG_HIT_SFX, asset_get("sfx_abyss_hazard_hit"));
 set_hitbox_value(AT_DSPECIAL, 2, HG_PROJECTILE_DESTROY_EFFECT, blaster_smoke_tiny);
 
+//Mini Bill Diagonally Down 1
 set_hitbox_value(AT_DSPECIAL, 3, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 3, HG_WINDOW, 3);
 set_hitbox_value(AT_DSPECIAL, 3, HG_WINDOW_CREATION_FRAME, 1);
@@ -112,6 +118,7 @@ set_hitbox_value(AT_DSPECIAL, 3, HG_PROJECTILE_IS_TRANSCENDENT, true);
 set_hitbox_value(AT_DSPECIAL, 3, HG_HIT_SFX, asset_get("sfx_abyss_hazard_hit"));
 set_hitbox_value(AT_DSPECIAL, 3, HG_PROJECTILE_DESTROY_EFFECT, blaster_smoke_tiny);
 
+//Mini Bill Diagonally Up2
 set_hitbox_value(AT_DSPECIAL, 4, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 4, HG_WINDOW, 3);
 set_hitbox_value(AT_DSPECIAL, 4, HG_WINDOW_CREATION_FRAME, 1);
@@ -140,6 +147,7 @@ set_hitbox_value(AT_DSPECIAL, 4, HG_PROJECTILE_IS_TRANSCENDENT, true);
 set_hitbox_value(AT_DSPECIAL, 4, HG_HIT_SFX, asset_get("sfx_abyss_hazard_hit"));
 set_hitbox_value(AT_DSPECIAL, 4, HG_PROJECTILE_DESTROY_EFFECT, blaster_smoke_tiny);
 
+//Mini Bill Diagonally Down2
 set_hitbox_value(AT_DSPECIAL, 5, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 5, HG_WINDOW, 3);
 set_hitbox_value(AT_DSPECIAL, 5, HG_WINDOW_CREATION_FRAME, 1);
@@ -168,6 +176,7 @@ set_hitbox_value(AT_DSPECIAL, 5, HG_PROJECTILE_IS_TRANSCENDENT, true);
 set_hitbox_value(AT_DSPECIAL, 5, HG_HIT_SFX, asset_get("sfx_abyss_hazard_hit"));
 set_hitbox_value(AT_DSPECIAL, 5, HG_PROJECTILE_DESTROY_EFFECT, blaster_smoke_tiny);
 
+//Mini Bill Diagonally Up3
 set_hitbox_value(AT_DSPECIAL, 6, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 6, HG_WINDOW, 3);
 set_hitbox_value(AT_DSPECIAL, 6, HG_WINDOW_CREATION_FRAME, 1);
@@ -196,6 +205,7 @@ set_hitbox_value(AT_DSPECIAL, 6, HG_PROJECTILE_IS_TRANSCENDENT, true);
 set_hitbox_value(AT_DSPECIAL, 6, HG_HIT_SFX, asset_get("sfx_abyss_hazard_hit"));
 set_hitbox_value(AT_DSPECIAL, 6, HG_PROJECTILE_DESTROY_EFFECT, blaster_smoke_tiny);
 
+//Mini Bill Diagonally Down3
 set_hitbox_value(AT_DSPECIAL, 7, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 7, HG_WINDOW, 3);
 set_hitbox_value(AT_DSPECIAL, 7, HG_WINDOW_CREATION_FRAME, 1);
@@ -224,6 +234,7 @@ set_hitbox_value(AT_DSPECIAL, 7, HG_PROJECTILE_IS_TRANSCENDENT, true);
 set_hitbox_value(AT_DSPECIAL, 7, HG_HIT_SFX, asset_get("sfx_abyss_hazard_hit"));
 set_hitbox_value(AT_DSPECIAL, 7, HG_PROJECTILE_DESTROY_EFFECT, blaster_smoke_tiny);
 
+//Blaster Mini Bill Forward
 set_hitbox_value(AT_DSPECIAL, 8, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 8, HG_WINDOW, 9);
 set_hitbox_value(AT_DSPECIAL, 8, HG_LIFETIME, 120);
@@ -251,6 +262,7 @@ set_hitbox_value(AT_DSPECIAL, 8, HG_PROJECTILE_IS_TRANSCENDENT, true);
 set_hitbox_value(AT_DSPECIAL, 8, HG_HIT_SFX, asset_get("sfx_ell_explosion_medium"));
 set_hitbox_value(AT_DSPECIAL, 8, HG_PROJECTILE_DESTROY_EFFECT, blaster_smoke_tiny);
 
+//Blaster Mini Bill Diagonally Up
 set_hitbox_value(AT_DSPECIAL, 9, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 9, HG_WINDOW, 9);
 set_hitbox_value(AT_DSPECIAL, 9, HG_LIFETIME, 120);
@@ -278,6 +290,7 @@ set_hitbox_value(AT_DSPECIAL, 9, HG_PROJECTILE_IS_TRANSCENDENT, true);
 set_hitbox_value(AT_DSPECIAL, 9, HG_HIT_SFX, asset_get("sfx_ell_dspecial_hit"));
 set_hitbox_value(AT_DSPECIAL, 9, HG_PROJECTILE_DESTROY_EFFECT, blaster_smoke_tiny);
 
+//Blaster Mini Bill Diagonally Down
 set_hitbox_value(AT_DSPECIAL, 10, HG_HITBOX_TYPE, 2);
 set_hitbox_value(AT_DSPECIAL, 10, HG_WINDOW, 9);
 set_hitbox_value(AT_DSPECIAL, 10, HG_LIFETIME, 120);
